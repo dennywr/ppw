@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Pertemuan 1 (Skipgram) &#8212; ppw</title>
+    <title>Skipgram &#8212; ppw</title>
   
   
   
@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Topic Modelling" href="topicmodelling.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="prev" title="Hello World" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,17 +163,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Hello World
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">TUGAS</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pertemuan 1 (Skipgram)</a></li>
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Skipgram</a></li>
 <li class="toctree-l1"><a class="reference internal" href="topicmodelling.html">Topic Modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Graph</a></li>
 </ul>
@@ -390,7 +386,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pertemuan 1 (Skipgram)</h1>
+    <h1>Skipgram</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,13 +396,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pertemuan 1 (Skipgram)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-ekstraksi-fitur">TF-IDF (Ekstraksi Fitur)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec-skipgram">Word2Vec (Skipgram)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-ekstraksi-fitur">TF-IDF (Ekstraksi Fitur)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec-skipgram">Word2Vec (Skipgram)</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -417,8 +411,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="pertemuan-1-skipgram">
-<h1>Pertemuan 1 (Skipgram)<a class="headerlink" href="#pertemuan-1-skipgram" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="skipgram">
+<h1>Skipgram<a class="headerlink" href="#skipgram" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -427,9 +421,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
 <section id="load-data">
-<h1>Load data<a class="headerlink" href="#load-data" title="Permalink to this heading">#</a></h1>
+<h2>Load data<a class="headerlink" href="#load-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/dennywr/cobaprosaindata/main/ptautm.csv&#39;</span><span class="p">)</span>
@@ -446,7 +439,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-055d43fb-c8ab-4943-b3d7-8030d8201d16" class="colab-df-container">
+  <div id="df-cc499ea8-3a32-49f4-a9c4-43609c808bc6" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -580,7 +573,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-055d43fb-c8ab-4943-b3d7-8030d8201d16')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-cc499ea8-3a32-49f4-a9c4-43609c808bc6')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -632,12 +625,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-055d43fb-c8ab-4943-b3d7-8030d8201d16 button.colab-df-convert');
+        document.querySelector('#df-cc499ea8-3a32-49f4-a9c4-43609c808bc6 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-055d43fb-c8ab-4943-b3d7-8030d8201d16');
+        const element = document.querySelector('#df-cc499ea8-3a32-49f4-a9c4-43609c808bc6');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -669,7 +662,7 @@ document.write(`
 </div>
 </section>
 <section id="preprocessing">
-<h1>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h1>
+<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Hapus karakter spesial pada teks</p></li>
 </ul>
@@ -829,16 +822,7 @@ Name: Abstrak, Length: 858, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Sastrawi
-  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━ <span class=" -Color -Color-Green">194.6/209.7 kB</span> <span class=" -Color -Color-Red">5.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">4.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: Sastrawi
-Successfully installed Sastrawi-1.0.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Sastrawi in /usr/local/lib/python3.10/dist-packages (1.0.1)
 </pre></div>
 </div>
 </div>
@@ -909,11 +893,11 @@ Successfully installed Sastrawi-1.0.1
 <span class="g g-Whitespace">     </span><span class="mi">39</span>         <span class="c1">#step 6</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">start_stemming_process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span> 
-<span class="g g-Whitespace">     </span><span class="mi">79</span>         <span class="c1">#step 4, 5</span>
-<span class="ne">---&gt; </span><span class="mi">80</span>         <span class="bp">self</span><span class="o">.</span><span class="n">remove_prefixes</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_word</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span>             <span class="k">return</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span>         <span class="k">if</span> <span class="n">csPrecedenceAdjustmentSpecification</span><span class="o">.</span><span class="n">is_satisfied_by</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">original_word</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>             <span class="c1">#step 4, 5</span>
+<span class="ne">---&gt; </span><span class="mi">60</span>             <span class="bp">self</span><span class="o">.</span><span class="n">remove_prefixes</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_word</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>                 <span class="k">return</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">remove_prefixes</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">     </span><span class="mi">87</span>     <span class="k">def</span> <span class="nf">remove_prefixes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -923,11 +907,25 @@ Successfully installed Sastrawi-1.0.1
 <span class="g g-Whitespace">     </span><span class="mi">91</span>                 <span class="k">return</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="n">removalCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">removals</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="k">for</span> <span class="n">visitor</span> <span class="ow">in</span> <span class="n">visitors</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>             <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="n">visitor</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">111</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_word</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>             <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="n">visitor</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_word</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_word</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_is_stopped</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept</span><span class="nt">(self, visitor)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span> 
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="k">def</span> <span class="nf">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitor</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">97</span>         <span class="n">visitor</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> 
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">def</span> <span class="nf">accept_visitors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitors</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Visitor/AbstractDisambiguatePrefixRule.py</span> in <span class="ni">visit</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="k">for</span> <span class="n">disambiguator</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">disambiguators</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">disambiguator</span><span class="o">.</span><span class="n">disambiguate</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">current_word</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>             <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>                 <span class="k">break</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -2130,7 +2128,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 </section>
 <section id="tf-idf-ekstraksi-fitur">
-<h1>TF-IDF (Ekstraksi Fitur)<a class="headerlink" href="#tf-idf-ekstraksi-fitur" title="Permalink to this heading">#</a></h1>
+<h2>TF-IDF (Ekstraksi Fitur)<a class="headerlink" href="#tf-idf-ekstraksi-fitur" title="Permalink to this heading">#</a></h2>
 <p>TF-IDF (Term Frequency-Inverse Document Frequency) adalah metode yang digunakan mengevaluasi seberapa penting sebuah kata bagi sebuah dokumen dalam kumpulan dokumen dengan cara mengalikan berapa kali sebuah kata muncul dalam sebuah dokumen (Term Frequency) dengan frekuensi dokumen terbalik (Inverse Document Frequency) dari kata di seluruh set dokumen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3746,7 +3744,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 </section>
 <section id="word2vec-skipgram">
-<h1>Word2Vec (Skipgram)<a class="headerlink" href="#word2vec-skipgram" title="Permalink to this heading">#</a></h1>
+<h2>Word2Vec (Skipgram)<a class="headerlink" href="#word2vec-skipgram" title="Permalink to this heading">#</a></h2>
 <p>Skip-gram adalah bagian dari algoritma Word2Vec yang digunakan untuk melatih representasi vektor kata yang menangkap makna semantik dan sintaksis. Kata-kata yang sering muncul dalam konteks yang sama cenderung memiliki vektor yang mirip</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4099,6 +4097,7 @@ Index: []
 </div>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -4136,7 +4135,7 @@ Index: []
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        <p class="prev-next-title">Hello World</p>
       </div>
     </a>
     <a class="right-next"
@@ -4163,13 +4162,11 @@ Index: []
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pertemuan 1 (Skipgram)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-ekstraksi-fitur">TF-IDF (Ekstraksi Fitur)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec-skipgram">Word2Vec (Skipgram)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-ekstraksi-fitur">TF-IDF (Ekstraksi Fitur)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec-skipgram">Word2Vec (Skipgram)</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
