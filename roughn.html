@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Graph &#8212; ppw</title>
+    <title>Rough-N &#8212; ppw</title>
   
   
   
@@ -64,11 +64,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'graph';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'roughn';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Rough-N" href="roughn.html" />
-    <link rel="prev" title="Topic Modelling" href="topicmodelling.html" />
+    <link rel="prev" title="Graph" href="graph.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,8 +172,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="skipgram.html">Skipgram</a></li>
 <li class="toctree-l1"><a class="reference internal" href="topicmodelling.html">Topic Modelling</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roughn.html">Rough-N</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Graph</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Rough-N</a></li>
 </ul>
 
     </div>
@@ -229,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/dennywr/ppw/blob/gh-pages/_sources/graph.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/dennywr/ppw/blob/gh-pages/_sources/roughn.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/dennywr/ppw/issues/new?title=Issue%20on%20page%20%2Fgraph.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dennywr/ppw/issues/new?title=Issue%20on%20page%20%2Froughn.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/graph.ipynb" target="_blank"
+      <li><a href="_sources/roughn.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +388,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Graph</h1>
+    <h1>Rough-N</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -402,29 +401,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-package-yang-dibutuhkan">Import library/package yang dibutuhkan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosinus-similarity">Cosinus Similarity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-koherensi">Matriks Koherensi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-output">Penjelasan output:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-networkx">Graph (NetworkX)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-closeness-centrality-dari-yang-tertinggi-ke-terendah">Nilai closeness centrality dari yang tertinggi ke terendah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-closeness-centrality-teratas">3 nilai closeness centrality teratas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pagerank">Pagerank</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-pagerank-dari-tertinggi-ke-terendah">Nilai pagerank dari tertinggi ke terendah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-pagerank-teratas">3 nilai pagerank teratas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eignvector-centrality">Eignvector Centrality</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-eigenvector-dari-yang-tertinggi-ke-terendah">Nilai eigenvector dari yang tertinggi ke terendah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-eigenvector-teratas">3 nilai Eigenvector teratas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betweeness-centrality">Betweeness Centrality</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-betweenness-centrality-dari-yang-tertinggi-ke-terendah">Nilai betweenness centrality dari yang tertinggi ke terendah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-betweenness-teratas">3 nilai Betweenness teratas</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
 </ul>
             </nav>
         </div>
@@ -436,8 +418,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="graph">
-<h1>Graph<a class="headerlink" href="#graph" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="rough-n">
+<h1>Rough-N<a class="headerlink" href="#rough-n" title="Permalink to this heading">#</a></h1>
 <section id="import-library-package-yang-dibutuhkan">
 <h2>Import library/package yang dibutuhkan<a class="headerlink" href="#import-library-package-yang-dibutuhkan" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -467,7 +449,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-556b6875-f611-48a5-a17b-3b9dc3cd5f28" class="colab-df-container">
+  <div id="df-4590b42e-41ed-4549-a4af-e5d3eeb9577b" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -618,7 +600,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-556b6875-f611-48a5-a17b-3b9dc3cd5f28')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-4590b42e-41ed-4549-a4af-e5d3eeb9577b')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -670,12 +652,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-556b6875-f611-48a5-a17b-3b9dc3cd5f28 button.colab-df-convert');
+        document.querySelector('#df-4590b42e-41ed-4549-a4af-e5d3eeb9577b button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-556b6875-f611-48a5-a17b-3b9dc3cd5f28');
+        const element = document.querySelector('#df-4590b42e-41ed-4549-a4af-e5d3eeb9577b');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -921,7 +903,7 @@ Name: Isi, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-998a7b51-ad83-4183-9434-483ccec2da4b" class="colab-df-container">
+  <div id="df-49e16518-a14c-4c1a-9a10-dbf08e205414" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1030,7 +1012,7 @@ Name: Isi, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-998a7b51-ad83-4183-9434-483ccec2da4b')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-49e16518-a14c-4c1a-9a10-dbf08e205414')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1082,12 +1064,12 @@ Name: Isi, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-998a7b51-ad83-4183-9434-483ccec2da4b button.colab-df-convert');
+        document.querySelector('#df-49e16518-a14c-4c1a-9a10-dbf08e205414 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-998a7b51-ad83-4183-9434-483ccec2da4b');
+        const element = document.querySelector('#df-49e16518-a14c-4c1a-9a10-dbf08e205414');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1110,1490 +1092,102 @@ Name: Isi, dtype: object
   </div>
   </div></div>
 </div>
-</section>
-<section id="tf-idf">
-<h2>TF-IDF<a class="headerlink" href="#tf-idf" title="Permalink to this heading">#</a></h2>
-<p>TF-IDF (Term Frequency-Inverse Document Frequency) adalah metode yang digunakan mengevaluasi seberapa penting sebuah kata bagi sebuah dokumen dalam kumpulan dokumen dengan cara mengalikan berapa kali sebuah kata muncul dalam sebuah dokumen (Term Frequency) dengan frekuensi dokumen terbalik (Inverse Document Frequency) dari kata di seluruh set dokumen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">RegexpTokenizer</span>
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
-<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finalResult</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">slang_words</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">])</span>
-<span class="c1"># finalResult</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">RegexpTokenizer</span>
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
-<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-
-<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">stopwords</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">)</span>
-
-<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">RegexpTokenizer</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">)</span>
-<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">lowercase</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                        <span class="n">stop_words</span><span class="o">=</span><span class="n">stopwords</span><span class="p">,</span>
-                        <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">)</span>
-
-
-<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">])</span>
-<span class="n">tfidf_terms</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/sklearn/feature_extraction/text.py:528: UserWarning: The parameter &#39;token_pattern&#39; will not be used since &#39;tokenizer&#39; is not None&#39;
-  warnings.warn(
-/usr/local/lib/python3.10/dist-packages/sklearn/feature_extraction/text.py:409: UserWarning: Your stop_words may be inconsistent with your preprocessing. Tokenizing the stop words generated tokens [&#39;baiknya&#39;, &#39;berkali&#39;, &#39;kali&#39;, &#39;kurangnya&#39;, &#39;mata&#39;, &#39;olah&#39;, &#39;sekurang&#39;, &#39;setidak&#39;, &#39;tama&#39;, &#39;tidaknya&#39;] not in stop_words.
-  warnings.warn(
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sklearn_frequency_vectorize</span><span class="p">(</span><span class="n">corpus</span><span class="p">):</span>
-    <span class="c1"># Scikit-Learn frequency vectorize method</span>
-    <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
-
-    <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
-    <span class="c1"># mengembalikan frekuensi kemunculan</span>
-    <span class="k">return</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
-<span class="n">vectsklen</span><span class="o">=</span><span class="n">sklearn_frequency_vectorize</span><span class="p">(</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vectsklen</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (0, 397)	5
-  (0, 108)	4
-  (0, 240)	3
-  (0, 456)	1
-  (0, 210)	16
-  (0, 598)	1
-  (0, 773)	1
-  (0, 942)	2
-  (0, 951)	1
-  (0, 165)	1
-  (0, 357)	1
-  (0, 557)	1
-  (0, 37)	1
-  (0, 775)	1
-  (0, 772)	1
-  (0, 887)	1
-  (0, 359)	1
-  (0, 707)	1
-  (0, 60)	2
-  (0, 678)	1
-  (0, 239)	4
-  (0, 17)	7
-  (0, 780)	1
-  (0, 418)	1
-  (0, 718)	1
-  :	:
-  (19, 698)	1
-  (19, 742)	1
-  (19, 383)	1
-  (19, 810)	2
-  (19, 958)	1
-  (19, 783)	1
-  (19, 125)	1
-  (19, 533)	1
-  (19, 273)	2
-  (19, 589)	1
-  (19, 355)	1
-  (19, 227)	1
-  (19, 245)	1
-  (19, 271)	1
-  (19, 302)	1
-  (19, 699)	1
-  (19, 496)	1
-  (19, 368)	1
-  (19, 661)	1
-  (19, 905)	1
-  (19, 659)	1
-  (19, 582)	1
-  (19, 536)	1
-  (19, 23)	1
-  (19, 217)	1
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+<section id="matriks-koherensi">
+<h2>Matriks Koherensi<a class="headerlink" href="#matriks-koherensi" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
 <span class="c1"># Membuat objek CountVectorizer</span>
-<span class="n">coun_vect</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="n">stopwords</span><span class="p">)</span>
-<span class="n">count_matrix</span> <span class="o">=</span> <span class="n">coun_vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">])</span>
-<span class="n">count_array</span> <span class="o">=</span> <span class="n">count_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-<span class="c1"># Membuat DataFrame dari array dengan kolom berdasarkan term dalam teks</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">count_array</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="n">coun_vect</span><span class="o">.</span><span class="n">vocabulary_</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+
+<span class="c1"># Menghitung term frequency</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">([</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">term</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="c1"># Menghitung matriks koherensi</span>
+<span class="n">matriks_koherensi</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Membuat DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">matriks_koherensi</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="n">term</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">term</span><span class="p">)</span>
+
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-b1c927eb-9def-45ad-bc44-cfdc6bd6c4ad" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>kinerja</th>
-      <th>buruk</th>
-      <th>fungsi</th>
-      <th>legislasi</th>
-      <th>dpr</th>
-      <th>minimnya</th>
-      <th>produk</th>
-      <th>undang</th>
-      <th>uu</th>
-      <th>dihasilkan</th>
-      <th>...</th>
-      <th>perangnya</th>
-      <th>meluas</th>
-      <th>kenaikan</th>
-      <th>pemaparan</th>
-      <th>terkini</th>
-      <th>pemahaman</th>
-      <th>menyusun</th>
-      <th>mengantisipasi</th>
-      <th>aneka</th>
-      <th>dunia</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>2</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-<p>20 rows × 970 columns</p>
-</div>
-    <div class="colab-df-buttons">
-      
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b1c927eb-9def-45ad-bc44-cfdc6bd6c4ad')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-      
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-    
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-b1c927eb-9def-45ad-bc44-cfdc6bd6c4ad button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b1c927eb-9def-45ad-bc44-cfdc6bd6c4ad');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-  
-    </div>
-  </div>
-  </div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menampilkan bobot dari masing-masing term</span>
-<span class="n">vsc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span><span class="n">columns</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">vocabulary_</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">TF-IDF Vectorizer</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">vsc</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TF-IDF Vectorizer
-</pre></div>
-</div>
-<div class="output text_html">
-  <div id="df-4988701a-498f-494b-bc71-646a5012d533" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>kinerja</th>
-      <th>buruk</th>
-      <th>fungsi</th>
-      <th>legislasi</th>
-      <th>dpr</th>
-      <th>minimnya</th>
-      <th>produk</th>
-      <th>undang</th>
-      <th>uu</th>
-      <th>dihasilkan</th>
-      <th>...</th>
-      <th>perangnya</th>
-      <th>meluas</th>
-      <th>kenaikan</th>
-      <th>pemaparan</th>
-      <th>terkini</th>
-      <th>pemahaman</th>
-      <th>menyusun</th>
-      <th>mengantisipasi</th>
-      <th>aneka</th>
-      <th>dunia</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.009479</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.025747</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.099362</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.072195</td>
-      <td>0.031095</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.076935</td>
-      <td>0.000000</td>
-      <td>0.024076</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.052363</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.016387</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.067881</td>
-      <td>0.000000</td>
-      <td>0.135762</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.021243</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.13384</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.06692</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.020942</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.121608</td>
-      <td>0.052376</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.030409</td>
-      <td>0.013097</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.133719</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.041847</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.026803</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.036236</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.138091</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.138091</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.069046</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.138091</td>
-      <td>0.000000</td>
-      <td>0.050168</td>
-      <td>0.021607</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0.00000</td>
-      <td>0.119704</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.059852</td>
-      <td>0.000000</td>
-      <td>0.059852</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.018730</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.052842</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.040850</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.288115</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.030055</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.027187</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.029504</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.030450</td>
-      <td>0.194606</td>
-    </tr>
-  </tbody>
-</table>
-<p>20 rows × 977 columns</p>
-</div>
-    <div class="colab-df-buttons">
-      
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-4988701a-498f-494b-bc71-646a5012d533')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-      
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-    
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-4988701a-498f-494b-bc71-646a5012d533 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-4988701a-498f-494b-bc71-646a5012d533');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-  
-    </div>
-  </div>
-  </div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (0, 975)	0.009478817758927347
-  (0, 593)	0.022007950905108556
-  (0, 418)	0.01776012431418806
-  (0, 425)	0.022007950905108556
-  (0, 301)	0.030289257460369264
-  (0, 611)	0.030289257460369264
-  (0, 964)	0.026624720931840023
-  (0, 814)	0.02036015435874942
-  (0, 546)	0.026624720931840023
-  (0, 795)	0.026624720931840023
-  (0, 349)	0.026624720931840023
-  (0, 630)	0.030289257460369264
-  (0, 396)	0.030289257460369264
-  (0, 827)	0.030289257460369264
-  (0, 238)	0.06057851492073853
-  (0, 383)	0.053249441863680046
-  (0, 645)	0.05328037294256417
-  (0, 224)	0.06057851492073853
-  (0, 742)	0.053249441863680046
-  (0, 948)	0.030289257460369264
-  (0, 751)	0.030289257460369264
-  (0, 490)	0.026624720931840023
-  (0, 109)	0.030289257460369264
-  (0, 581)	0.030289257460369264
-  (0, 790)	0.030289257460369264
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (0, 43)	5
+  (0, 8)	4
+  (0, 26)	3
+  (0, 50)	1
+  (0, 20)	16
+  (0, 64)	1
+  (0, 83)	1
+  (0, 104)	2
+  (0, 106)	1
+  (0, 12)	1
+  (0, 37)	1
+  (0, 60)	1
+  (0, 3)	1
+  (0, 84)	1
+  (0, 82)	1
+  (0, 100)	1
+  (0, 38)	1
+  (0, 75)	1
+  (0, 4)	2
+  (0, 72)	1
+  (0, 25)	4
+  (0, 0)	7
+  (0, 86)	1
+  (0, 46)	1
+  (0, 76)	1
   :	:
-  (19, 976)	0.19460629691650602
-  (19, 962)	0.09730314845825301
-  (19, 942)	0.19460629691650602
-  (19, 521)	0.09730314845825301
-  (19, 601)	0.0855309568707665
-  (19, 745)	0.0855309568707665
-  (19, 551)	0.0855309568707665
-  (19, 88)	0.06540626242800572
-  (19, 855)	0.07717845401549223
-  (19, 485)	0.06540626242800572
-  (19, 775)	0.0855309568707665
-  (19, 578)	0.06540626242800572
-  (19, 197)	0.0855309568707665
-  (19, 684)	0.0855309568707665
-  (19, 136)	0.0855309568707665
-  (19, 255)	0.0855309568707665
-  (19, 132)	0.07069974947334397
-  (19, 769)	0.09056313597048983
-  (19, 616)	0.20230022012233262
-  (19, 370)	0.10726814168103842
-  (19, 325)	0.0859152485391369
-  (19, 66)	0.07069974947334397
-  (19, 975)	0.030450360587822366
-  (19, 418)	0.05705375957273143
-  (19, 773)	0.0855309568707665
+  (0, 52)	1
+  (0, 87)	1
+  (0, 62)	1
+  (0, 9)	1
+  (0, 54)	1
+  (0, 80)	1
+  (0, 105)	1
+  (0, 79)	2
+  (0, 21)	2
+  (0, 70)	3
+  (0, 39)	2
+  (0, 24)	2
+  (0, 93)	1
+  (0, 42)	1
+  (0, 68)	1
+  (0, 35)	1
+  (0, 88)	1
+  (0, 58)	1
+  (0, 92)	1
+  (0, 109)	1
+  (0, 65)	1
+  (0, 28)	1
+  (0, 47)	1
+  (0, 45)	1
+  (0, 63)	1
+[&#39;kinerja buruk fungsi legislasi dpr minimnya produk undang undang uu dihasilkan kelatahan dpr mengutak atik prolegnas prioritas tata kelola perencanaan buruk berdampak kinerja buruk peneliti formappi albert purwa konferensi pers evaluasi kinerja dpr sidang i sidang jelang pemilu dpr lemah jakarta senin oktober formappi mencatat komisi komisi dpr kuantitas kali rapat komisi iv rapat kali komisi ix kali rapat rapat komisi dinilai menurun dibandingkan rapat rapat sidang v sidang kali rapat penurunan rapat rapat komisi dipengaruhi politik dimana anggota dpr disibukkan tahapan tahapan pemilu pilpres pileg dimana berjuang terpilih albert berdasarkan sifat rapat rapat bersifat tertutup komisi i viii penyumbang kali rapat tertutup penurunan ketertutupan rapat rapat dibandingkan sidang v sidang rapat tertutup mengikuti rapat komisi albert formappi mencatat tingkat kehadiran rapat paripurna rapur tingkat kehadiran orang anggota dpr orang kehadiran anggota dpr rapur menurun dibandingkan sidang v sidang diikuti orang albert albert daftar kehadiran sidang i sidang v memiliki masalah sidang v anggota hadir fisik virtual izin sidang i dirinci hadir fisik virtual izin rincian sengaja disembunyikan kehadiran memenuhi kuorum sesuai anjuran ketua dpr puan maharani anggota dpr rajin mengikuti rapat rapat albert formappi menyoroti buruknya kinerja dpr melaksanakan fungsi fungsi pokok unsur pimpinan dpr elite partai politik dinilai kesulitan fokus kesulitan fokus dpr seiring kian padatnya kegiatan partai politik rangka menghadapi pemilu salah wakil ketua dpr muhaimin iskandar kontestan pilpres kondisi pimpinan dpr elite partai politik berdampak buruk kinerja dpr albert mgn z&#39;]
+[&#39;berdasarkan kode etik iya melanggar pimpinan kpk firli pertemuan pertemuan kementan menterinya media indonesia senin boyamin pertemuan dielakan terkait korupsi kementan pertemuan dibenarkan pimpinan kpk pertemuan pertemuan menandakan kpk potensi korupsi kementan lobi lobi pembenaran kementan menterinya dilaporkan kpk menterinya berusaha menghentikan perkara melobi lobi pertemuan berharap cepatlah polda dewas kpk tersandera kasusnya firli pidana iya terbukti dipecat diganti plt kpk sambungnya boyamin dewas menindaklanjuti menggali keterangan syl terang benderang firli berkelit van z&#39;]
 </pre></div>
 </div>
-</div>
-</div>
-</section>
-<section id="cosinus-similarity">
-<h2>Cosinus Similarity<a class="headerlink" href="#cosinus-similarity" title="Permalink to this heading">#</a></h2>
-<p>Cosine similarity adalah ukuran statistik yang digunakan untuk menentukan seberapa mirip dua vektor. Cosine similarity sering digunakan untuk mengukur seberapa mirip dua atau lebih dokumen. Berikut merupakan rumus untuk menghitung cosine similarity:</p>
-<p><span class="math notranslate nohighlight">\(\text{cosine similarity}(A, B) = \frac{A \cdot B}{||A||_2 \times ||B||_2} = \frac{\sum_{i=1}^{n} A_i \times B_i}{\sqrt{\sum_{i=1}^{n} (A_i)^2} \times \sqrt{\sum_{i=1}^{n} (B_i)^2}}\)</span></p>
-<p>Dimana:</p>
-<ul class="simple">
-<li><p>A dan B adalah dua vektor yang ingin Anda hitung cosine similarity-nya</p></li>
-<li><p>A⋅B adalah dot product dari dua vektor</p></li>
-<li><p>∣∣A∣∣2​ dan ∣∣B∣∣2​ adalah norm (atau panjang) dari masing-masing vektor</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
-    <span class="c1"># Normalisasi vektor</span>
-    <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">matrix_norm</span> <span class="o">=</span> <span class="n">matrix</span> <span class="o">/</span> <span class="n">norm</span>
-
-    <span class="c1"># Hitung cosine similarity</span>
-    <span class="n">calculate_cosine_similarity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">matrix_norm</span><span class="p">,</span> <span class="n">matrix_norm</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">calculate_cosine_similarity</span>
-
-<span class="c1"># hitung cosine similarity</span>
-<span class="n">cosine_similarity_result</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
-<span class="c1"># menghasilkan matriks cosine similarity, di mana setiap elemen i, j mewakili cosine similarity antara dokumen i dan j</span>
-<span class="n">cosine_similarity_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cosine_similarity_result</span><span class="p">)</span>
-
-<span class="c1"># Menampilkan DataFrame</span>
-<span class="n">cosine_similarity_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-109ef85b-8539-4d27-bb92-c0f6206eeb7d" class="colab-df-container">
+  <div id="df-6d607a64-938e-4295-9565-a19ae9d8a26a" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2612,496 +1206,302 @@ Name: Isi, dtype: object
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
-      <th>11</th>
-      <th>12</th>
-      <th>13</th>
-      <th>14</th>
-      <th>15</th>
-      <th>16</th>
-      <th>17</th>
-      <th>18</th>
-      <th>19</th>
+      <th>albert</th>
+      <th>anggota</th>
+      <th>anjuran</th>
+      <th>atik</th>
+      <th>berdampak</th>
+      <th>berdasarkan</th>
+      <th>berjuang</th>
+      <th>bersifat</th>
+      <th>buruk</th>
+      <th>buruknya</th>
+      <th>...</th>
+      <th>tata</th>
+      <th>terpilih</th>
+      <th>tertutup</th>
+      <th>tingkat</th>
+      <th>undang</th>
+      <th>unsur</th>
+      <th>uu</th>
+      <th>viii</th>
+      <th>virtual</th>
+      <th>wakil</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1.000000</td>
-      <td>0.009587</td>
-      <td>0.015086</td>
-      <td>0.004187</td>
-      <td>0.049200</td>
-      <td>0.004086</td>
-      <td>0.027146</td>
-      <td>0.028899</td>
-      <td>0.027479</td>
-      <td>0.005334</td>
-      <td>0.022615</td>
-      <td>0.011796</td>
-      <td>0.032979</td>
-      <td>0.011406</td>
-      <td>0.087232</td>
-      <td>0.019611</td>
-      <td>0.014708</td>
-      <td>0.029634</td>
-      <td>0.044463</td>
-      <td>0.003579</td>
+      <th>albert</th>
+      <td>49</td>
+      <td>35</td>
+      <td>7</td>
+      <td>7</td>
+      <td>14</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>28</td>
+      <td>7</td>
+      <td>...</td>
+      <td>7</td>
+      <td>7</td>
+      <td>21</td>
+      <td>14</td>
+      <td>14</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>14</td>
+      <td>7</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>0.009587</td>
-      <td>1.000000</td>
-      <td>0.042820</td>
-      <td>0.006800</td>
-      <td>0.006583</td>
-      <td>0.001756</td>
-      <td>0.009378</td>
-      <td>0.003147</td>
-      <td>0.005517</td>
-      <td>0.029956</td>
-      <td>0.034135</td>
-      <td>0.010893</td>
-      <td>0.017639</td>
-      <td>0.029358</td>
-      <td>0.023247</td>
-      <td>0.003858</td>
-      <td>0.010949</td>
-      <td>0.016242</td>
-      <td>0.020813</td>
-      <td>0.005010</td>
+      <th>anggota</th>
+      <td>35</td>
+      <td>25</td>
+      <td>5</td>
+      <td>5</td>
+      <td>10</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>20</td>
+      <td>5</td>
+      <td>...</td>
+      <td>5</td>
+      <td>5</td>
+      <td>15</td>
+      <td>10</td>
+      <td>10</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>10</td>
+      <td>5</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>0.015086</td>
-      <td>0.042820</td>
-      <td>1.000000</td>
-      <td>0.023550</td>
-      <td>0.049577</td>
-      <td>0.008793</td>
-      <td>0.063519</td>
-      <td>0.051760</td>
-      <td>0.034387</td>
-      <td>0.108905</td>
-      <td>0.207919</td>
-      <td>0.155205</td>
-      <td>0.043005</td>
-      <td>0.192332</td>
-      <td>0.046078</td>
-      <td>0.168434</td>
-      <td>0.176748</td>
-      <td>0.058921</td>
-      <td>0.030412</td>
-      <td>0.039443</td>
+      <th>anjuran</th>
+      <td>7</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>0.004187</td>
-      <td>0.006800</td>
-      <td>0.023550</td>
-      <td>1.000000</td>
-      <td>0.113601</td>
-      <td>0.016580</td>
-      <td>0.074963</td>
-      <td>0.033521</td>
-      <td>0.078373</td>
-      <td>0.027110</td>
-      <td>0.047226</td>
-      <td>0.030354</td>
-      <td>0.031500</td>
-      <td>0.025029</td>
-      <td>0.055775</td>
-      <td>0.031385</td>
-      <td>0.051317</td>
-      <td>0.004183</td>
-      <td>0.061499</td>
-      <td>0.036180</td>
+      <th>atik</th>
+      <td>7</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>0.049200</td>
-      <td>0.006583</td>
-      <td>0.049577</td>
-      <td>0.113601</td>
-      <td>1.000000</td>
-      <td>0.007203</td>
-      <td>0.083544</td>
-      <td>0.053656</td>
-      <td>0.112100</td>
-      <td>0.057089</td>
-      <td>0.088462</td>
-      <td>0.062849</td>
-      <td>0.065284</td>
-      <td>0.067166</td>
-      <td>0.053682</td>
-      <td>0.042766</td>
-      <td>0.072910</td>
-      <td>0.034918</td>
-      <td>0.283459</td>
-      <td>0.021970</td>
+      <th>berdampak</th>
+      <td>14</td>
+      <td>10</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>8</td>
+      <td>2</td>
+      <td>...</td>
+      <td>2</td>
+      <td>2</td>
+      <td>6</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>0.004086</td>
-      <td>0.001756</td>
-      <td>0.008793</td>
-      <td>0.016580</td>
-      <td>0.007203</td>
-      <td>1.000000</td>
-      <td>0.004287</td>
-      <td>0.005019</td>
-      <td>0.000893</td>
-      <td>0.000889</td>
-      <td>0.001828</td>
-      <td>0.028152</td>
-      <td>0.001474</td>
-      <td>0.012414</td>
-      <td>0.010728</td>
-      <td>0.000868</td>
-      <td>0.004740</td>
-      <td>0.008571</td>
-      <td>0.006413</td>
-      <td>0.022078</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>0.027146</td>
-      <td>0.009378</td>
-      <td>0.063519</td>
-      <td>0.074963</td>
-      <td>0.083544</td>
-      <td>0.004287</td>
-      <td>1.000000</td>
-      <td>0.220017</td>
-      <td>0.054252</td>
-      <td>0.036283</td>
-      <td>0.026426</td>
-      <td>0.028082</td>
-      <td>0.081947</td>
-      <td>0.024837</td>
-      <td>0.019234</td>
-      <td>0.035810</td>
-      <td>0.043632</td>
-      <td>0.023081</td>
-      <td>0.111184</td>
-      <td>0.005996</td>
+      <th>unsur</th>
+      <td>7</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>0.028899</td>
-      <td>0.003147</td>
-      <td>0.051760</td>
-      <td>0.033521</td>
-      <td>0.053656</td>
-      <td>0.005019</td>
-      <td>0.220017</td>
-      <td>1.000000</td>
-      <td>0.009850</td>
-      <td>0.108851</td>
-      <td>0.053946</td>
-      <td>0.033020</td>
-      <td>0.090477</td>
-      <td>0.026164</td>
-      <td>0.004779</td>
-      <td>0.050716</td>
-      <td>0.043911</td>
-      <td>0.009280</td>
-      <td>0.111337</td>
-      <td>0.007194</td>
+      <th>uu</th>
+      <td>7</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>0.027479</td>
-      <td>0.005517</td>
-      <td>0.034387</td>
-      <td>0.078373</td>
-      <td>0.112100</td>
-      <td>0.000893</td>
-      <td>0.054252</td>
-      <td>0.009850</td>
-      <td>1.000000</td>
-      <td>0.039260</td>
-      <td>0.082097</td>
-      <td>0.136996</td>
-      <td>0.013012</td>
-      <td>0.157189</td>
-      <td>0.056804</td>
-      <td>0.049802</td>
-      <td>0.086851</td>
-      <td>0.088759</td>
-      <td>0.066456</td>
-      <td>0.027243</td>
+      <th>viii</th>
+      <td>7</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>0.005334</td>
-      <td>0.029956</td>
-      <td>0.108905</td>
-      <td>0.027110</td>
-      <td>0.057089</td>
-      <td>0.000889</td>
-      <td>0.036283</td>
-      <td>0.108851</td>
-      <td>0.039260</td>
-      <td>1.000000</td>
-      <td>0.121140</td>
-      <td>0.172102</td>
-      <td>0.009087</td>
-      <td>0.087841</td>
-      <td>0.012737</td>
-      <td>0.074890</td>
-      <td>0.080262</td>
-      <td>0.017780</td>
-      <td>0.027858</td>
-      <td>0.033385</td>
+      <th>virtual</th>
+      <td>14</td>
+      <td>10</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>8</td>
+      <td>2</td>
+      <td>...</td>
+      <td>2</td>
+      <td>2</td>
+      <td>6</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>0.022615</td>
-      <td>0.034135</td>
-      <td>0.207919</td>
-      <td>0.047226</td>
-      <td>0.088462</td>
-      <td>0.001828</td>
-      <td>0.026426</td>
-      <td>0.053946</td>
-      <td>0.082097</td>
-      <td>0.121140</td>
-      <td>1.000000</td>
-      <td>0.164173</td>
-      <td>0.040711</td>
-      <td>0.234678</td>
-      <td>0.033769</td>
-      <td>0.129616</td>
-      <td>0.157026</td>
-      <td>0.069422</td>
-      <td>0.065276</td>
-      <td>0.067573</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0.011796</td>
-      <td>0.010893</td>
-      <td>0.155205</td>
-      <td>0.030354</td>
-      <td>0.062849</td>
-      <td>0.028152</td>
-      <td>0.028082</td>
-      <td>0.033020</td>
-      <td>0.136996</td>
-      <td>0.172102</td>
-      <td>0.164173</td>
-      <td>1.000000</td>
-      <td>0.024780</td>
-      <td>0.557457</td>
-      <td>0.014879</td>
-      <td>0.529958</td>
-      <td>0.138150</td>
-      <td>0.086527</td>
-      <td>0.037046</td>
-      <td>0.084177</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>0.032979</td>
-      <td>0.017639</td>
-      <td>0.043005</td>
-      <td>0.031500</td>
-      <td>0.065284</td>
-      <td>0.001474</td>
-      <td>0.081947</td>
-      <td>0.090477</td>
-      <td>0.013012</td>
-      <td>0.009087</td>
-      <td>0.040711</td>
-      <td>0.024780</td>
-      <td>1.000000</td>
-      <td>0.024275</td>
-      <td>0.017026</td>
-      <td>0.079388</td>
-      <td>0.030626</td>
-      <td>0.065752</td>
-      <td>0.138123</td>
-      <td>0.007776</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0.011406</td>
-      <td>0.029358</td>
-      <td>0.192332</td>
-      <td>0.025029</td>
-      <td>0.067166</td>
-      <td>0.012414</td>
-      <td>0.024837</td>
-      <td>0.026164</td>
-      <td>0.157189</td>
-      <td>0.087841</td>
-      <td>0.234678</td>
-      <td>0.557457</td>
-      <td>0.024275</td>
-      <td>1.000000</td>
-      <td>0.005302</td>
-      <td>0.332256</td>
-      <td>0.175769</td>
-      <td>0.172576</td>
-      <td>0.032631</td>
-      <td>0.060939</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0.087232</td>
-      <td>0.023247</td>
-      <td>0.046078</td>
-      <td>0.055775</td>
-      <td>0.053682</td>
-      <td>0.010728</td>
-      <td>0.019234</td>
-      <td>0.004779</td>
-      <td>0.056804</td>
-      <td>0.012737</td>
-      <td>0.033769</td>
-      <td>0.014879</td>
-      <td>0.017026</td>
-      <td>0.005302</td>
-      <td>1.000000</td>
-      <td>0.016774</td>
-      <td>0.010048</td>
-      <td>0.023200</td>
-      <td>0.017612</td>
-      <td>0.034078</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>0.019611</td>
-      <td>0.003858</td>
-      <td>0.168434</td>
-      <td>0.031385</td>
-      <td>0.042766</td>
-      <td>0.000868</td>
-      <td>0.035810</td>
-      <td>0.050716</td>
-      <td>0.049802</td>
-      <td>0.074890</td>
-      <td>0.129616</td>
-      <td>0.529958</td>
-      <td>0.079388</td>
-      <td>0.332256</td>
-      <td>0.016774</td>
-      <td>1.000000</td>
-      <td>0.101217</td>
-      <td>0.141103</td>
-      <td>0.031855</td>
-      <td>0.084260</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>0.014708</td>
-      <td>0.010949</td>
-      <td>0.176748</td>
-      <td>0.051317</td>
-      <td>0.072910</td>
-      <td>0.004740</td>
-      <td>0.043632</td>
-      <td>0.043911</td>
-      <td>0.086851</td>
-      <td>0.080262</td>
-      <td>0.157026</td>
-      <td>0.138150</td>
-      <td>0.030626</td>
-      <td>0.175769</td>
-      <td>0.010048</td>
-      <td>0.101217</td>
-      <td>1.000000</td>
-      <td>0.046699</td>
-      <td>0.075696</td>
-      <td>0.037006</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>0.029634</td>
-      <td>0.016242</td>
-      <td>0.058921</td>
-      <td>0.004183</td>
-      <td>0.034918</td>
-      <td>0.008571</td>
-      <td>0.023081</td>
-      <td>0.009280</td>
-      <td>0.088759</td>
-      <td>0.017780</td>
-      <td>0.069422</td>
-      <td>0.086527</td>
-      <td>0.065752</td>
-      <td>0.172576</td>
-      <td>0.023200</td>
-      <td>0.141103</td>
-      <td>0.046699</td>
-      <td>1.000000</td>
-      <td>0.019791</td>
-      <td>0.047170</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>0.044463</td>
-      <td>0.020813</td>
-      <td>0.030412</td>
-      <td>0.061499</td>
-      <td>0.283459</td>
-      <td>0.006413</td>
-      <td>0.111184</td>
-      <td>0.111337</td>
-      <td>0.066456</td>
-      <td>0.027858</td>
-      <td>0.065276</td>
-      <td>0.037046</td>
-      <td>0.138123</td>
-      <td>0.032631</td>
-      <td>0.017612</td>
-      <td>0.031855</td>
-      <td>0.075696</td>
-      <td>0.019791</td>
-      <td>1.000000</td>
-      <td>0.017871</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>0.003579</td>
-      <td>0.005010</td>
-      <td>0.039443</td>
-      <td>0.036180</td>
-      <td>0.021970</td>
-      <td>0.022078</td>
-      <td>0.005996</td>
-      <td>0.007194</td>
-      <td>0.027243</td>
-      <td>0.033385</td>
-      <td>0.067573</td>
-      <td>0.084177</td>
-      <td>0.007776</td>
-      <td>0.060939</td>
-      <td>0.034078</td>
-      <td>0.084260</td>
-      <td>0.037006</td>
-      <td>0.047170</td>
-      <td>0.017871</td>
-      <td>1.000000</td>
+      <th>wakil</th>
+      <td>7</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
+<p>110 rows × 110 columns</p>
 </div>
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-109ef85b-8539-4d27-bb92-c0f6206eeb7d')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6d607a64-938e-4295-9565-a19ae9d8a26a')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3153,12 +1553,12 @@ Name: Isi, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-109ef85b-8539-4d27-bb92-c0f6206eeb7d button.colab-df-convert');
+        document.querySelector('#df-6d607a64-938e-4295-9565-a19ae9d8a26a button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-109ef85b-8539-4d27-bb92-c0f6206eeb7d');
+        const element = document.querySelector('#df-6d607a64-938e-4295-9565-a19ae9d8a26a');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3181,6 +1581,61 @@ Name: Isi, dtype: object
   </div>
   </div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>rouge
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting rouge
+  Downloading rouge-1.0.1-py3-none-any.whl (13 kB)
+Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (from rouge) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: rouge
+Successfully installed rouge-1.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rouge</span> <span class="kn">import</span> <span class="n">Rouge</span>
+
+<span class="c1"># Contoh hipotesis dan referensi</span>
+<span class="n">hipotesis</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">referensi</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
+
+<span class="c1"># Membuat objek Rouge</span>
+<span class="n">rouge</span> <span class="o">=</span> <span class="n">Rouge</span><span class="p">()</span>
+
+<span class="c1"># Menghitung skor ROUGE</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">rouge</span><span class="o">.</span><span class="n">get_scores</span><span class="p">(</span><span class="n">hipotesis</span><span class="p">,</span> <span class="n">referensi</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;rouge-1&#39;: {&#39;r&#39;: 0.08163265306122448, &#39;p&#39;: 0.035398230088495575, &#39;f&#39;: 0.04938271182975192}, &#39;rouge-2&#39;: {&#39;r&#39;: 0.0, &#39;p&#39;: 0.0, &#39;f&#39;: 0.0}, &#39;rouge-l&#39;: {&#39;r&#39;: 0.061224489795918366, &#39;p&#39;: 0.02654867256637168, &#39;f&#39;: 0.03703703281740637}}]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="penjelasan-output">
+<h3>Penjelasan output:<a class="headerlink" href="#penjelasan-output" title="Permalink to this heading">#</a></h3>
+<p>rouge-1: Mengukur sejauh mana unigram (kata tunggal) dalam teks hipotesis cocok dengan unigram dalam teks referensi.</p>
+<p>rouge-2: Mengukur sejauh mana bigram (dua kata yang berurutan) dalam teks hipotesis cocok dengan bigram dalam teks referensi.</p>
+<p>rouge-l: Mengukur sejauh mana longest common subsequence (subsequence terpanjang yang sama) dalam teks hipotesis cocok dengan teks referensi.
+Untuk setiap metrik di atas, ada tiga nilai yang dihasilkan:</p>
+<ul class="simple">
+<li><p>r (recall): Proporsi n-gram dalam teks referensi yang juga muncul dalam teks hipotesis.</p></li>
+<li><p>p (precision): Proporsi n-gram dalam teks hipotesis yang juga muncul dalam teks referensi.</p></li>
+<li><p>f (F1 score): Rata-rata harmonik dari recall dan precision, memberikan ukuran yang seimbang antara keduanya.</p></li>
+</ul>
+<p>Misalnya, untuk rouge-1, recall adalah 0.0816, precision adalah 0.0354, dan F1 score adalah 0.0494. Ini berarti bahwa sekitar 8.16% dari kata-kata dalam teks referensi juga muncul dalam teks hipotesis, sekitar 3.54% dari kata-kata dalam teks hipotesis juga muncul dalam teks referensi, dan F1 score (yang merupakan rata-rata harmonik dari recall dan precision) adalah 0.0494. Nilai-nilai yang sama juga berlaku untuk rouge-2 dan rouge-l, tetapi dengan n-gram yang berbeda (bigram untuk rouge-2 dan longest common subsequence untuk rouge-l).</p>
+</section>
 </section>
 <section id="graph-networkx">
 <h2>Graph (NetworkX)<a class="headerlink" href="#graph-networkx" title="Permalink to this heading">#</a></h2>
@@ -3190,19 +1645,14 @@ Name: Isi, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># Membuat grafik kosong</span>
+<span class="c1"># Membuat objek grafik</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 
-<span class="c1"># Menambahkan node ke dalam grafik</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cosine_similarity_result</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-<span class="c1"># Menambahkan edge berdasarkan cosine similarity</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cosine_similarity_result</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">cosine_similarity_result</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="c1"># tambahkan threshold jika perlu</span>
-        <span class="k">if</span> <span class="n">cosine_similarity_result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
-            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">cosine_similarity_result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+<span class="c1"># Menambahkan simpul dan tepi ke grafik</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
 
 <span class="c1"># Menggambar grafik</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -3211,7 +1661,7 @@ Name: Isi, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/52dd03e0dc85d04a9d5ad7a4a606a5c17df2cfc5bf2c4ebee38df835e53b9008.png" src="_images/52dd03e0dc85d04a9d5ad7a4a606a5c17df2cfc5bf2c4ebee38df835e53b9008.png" />
+<img alt="_images/08b6ea06f7a96f737692f9629644d42ae272e902e52759d6550a6e86c7c153e4.png" src="_images/08b6ea06f7a96f737692f9629644d42ae272e902e52759d6550a6e86c7c153e4.png" />
 </div>
 </div>
 </section>
@@ -3236,931 +1686,120 @@ Name: Isi, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 0: Closeness Centrality = 0.3104189044038668
-Node 1: Closeness Centrality = 0.0
-Node 2: Closeness Centrality = 0.5432330827067668
-Node 3: Closeness Centrality = 0.5245009074410163
-Node 4: Closeness Centrality = 0.6913875598086124
-Node 5: Closeness Centrality = 0.0
-Node 6: Closeness Centrality = 0.5245009074410163
-Node 7: Closeness Centrality = 0.5633528265107213
-Node 8: Closeness Centrality = 0.6337719298245614
-Node 9: Closeness Centrality = 0.5633528265107213
-Node 10: Closeness Centrality = 0.6613272311212814
-Node 11: Closeness Centrality = 0.608421052631579
-Node 12: Closeness Centrality = 0.5245009074410163
-Node 13: Closeness Centrality = 0.608421052631579
-Node 14: Closeness Centrality = 0.4609250398724083
-Node 15: Closeness Centrality = 0.5633528265107213
-Node 16: Closeness Centrality = 0.608421052631579
-Node 17: Closeness Centrality = 0.5432330827067668
-Node 18: Closeness Centrality = 0.5633528265107213
-Node 19: Closeness Centrality = 0.4345864661654135
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node albert: Closeness Centrality = 1.0
+Node anggota: Closeness Centrality = 1.0
+Node anjuran: Closeness Centrality = 0.6089385474860335
+Node atik: Closeness Centrality = 0.6089385474860335
+Node berdampak: Closeness Centrality = 1.0
+Node berdasarkan: Closeness Centrality = 0.6089385474860335
+Node berjuang: Closeness Centrality = 0.6089385474860335
+Node bersifat: Closeness Centrality = 0.6089385474860335
+Node buruk: Closeness Centrality = 1.0
+Node buruknya: Closeness Centrality = 0.6089385474860335
+Node daftar: Closeness Centrality = 0.6089385474860335
+Node dibandingkan: Closeness Centrality = 1.0
+Node dihasilkan: Closeness Centrality = 0.6089385474860335
+Node diikuti: Closeness Centrality = 0.6089385474860335
+Node dimana: Closeness Centrality = 1.0
+Node dinilai: Closeness Centrality = 1.0
+Node dipengaruhi: Closeness Centrality = 0.6089385474860335
+Node dirinci: Closeness Centrality = 0.6089385474860335
+Node disembunyikan: Closeness Centrality = 0.6089385474860335
+Node disibukkan: Closeness Centrality = 0.6089385474860335
+Node dpr: Closeness Centrality = 1.0
+Node elite: Closeness Centrality = 1.0
+Node evaluasi: Closeness Centrality = 0.6089385474860335
+Node fisik: Closeness Centrality = 1.0
+Node fokus: Closeness Centrality = 1.0
+Node formappi: Closeness Centrality = 1.0
+Node fungsi: Closeness Centrality = 1.0
+Node hadir: Closeness Centrality = 1.0
+Node iskandar: Closeness Centrality = 0.6089385474860335
+Node iv: Closeness Centrality = 0.6089385474860335
+Node ix: Closeness Centrality = 0.6089385474860335
+Node izin: Closeness Centrality = 1.0
+Node jakarta: Closeness Centrality = 0.6089385474860335
+Node jelang: Closeness Centrality = 0.6089385474860335
+Node kali: Closeness Centrality = 1.0
+Node kegiatan: Closeness Centrality = 0.6089385474860335
+Node kehadiran: Closeness Centrality = 1.0
+Node kelatahan: Closeness Centrality = 0.6089385474860335
+Node kelola: Closeness Centrality = 0.6089385474860335
+Node kesulitan: Closeness Centrality = 1.0
+Node ketertutupan: Closeness Centrality = 0.6089385474860335
+Node ketua: Closeness Centrality = 1.0
+Node kian: Closeness Centrality = 0.6089385474860335
+Node kinerja: Closeness Centrality = 1.0
+Node komisi: Closeness Centrality = 1.0
+Node kondisi: Closeness Centrality = 0.6089385474860335
+Node konferensi: Closeness Centrality = 0.6089385474860335
+Node kontestan: Closeness Centrality = 0.6089385474860335
+Node kuantitas: Closeness Centrality = 0.6089385474860335
+Node kuorum: Closeness Centrality = 0.6089385474860335
+Node legislasi: Closeness Centrality = 0.6089385474860335
+Node lemah: Closeness Centrality = 0.6089385474860335
+Node maharani: Closeness Centrality = 0.6089385474860335
+Node masalah: Closeness Centrality = 0.6089385474860335
+Node melaksanakan: Closeness Centrality = 0.6089385474860335
+Node memenuhi: Closeness Centrality = 0.6089385474860335
+Node memiliki: Closeness Centrality = 0.6089385474860335
+Node mencatat: Closeness Centrality = 1.0
+Node menghadapi: Closeness Centrality = 0.6089385474860335
+Node mengikuti: Closeness Centrality = 1.0
+Node mengutak: Closeness Centrality = 0.6089385474860335
+Node menurun: Closeness Centrality = 1.0
+Node menyoroti: Closeness Centrality = 0.6089385474860335
+Node mgn: Closeness Centrality = 0.6089385474860335
+Node minimnya: Closeness Centrality = 0.6089385474860335
+Node muhaimin: Closeness Centrality = 0.6089385474860335
+Node oktober: Closeness Centrality = 0.6089385474860335
+Node orang: Closeness Centrality = 1.0
+Node padatnya: Closeness Centrality = 0.6089385474860335
+Node paripurna: Closeness Centrality = 0.6089385474860335
+Node partai: Closeness Centrality = 1.0
+Node pemilu: Closeness Centrality = 1.0
+Node peneliti: Closeness Centrality = 0.6089385474860335
+Node penurunan: Closeness Centrality = 1.0
+Node penyumbang: Closeness Centrality = 0.6089385474860335
+Node perencanaan: Closeness Centrality = 0.6089385474860335
+Node pers: Closeness Centrality = 0.6089385474860335
+Node pileg: Closeness Centrality = 0.6089385474860335
+Node pilpres: Closeness Centrality = 1.0
+Node pimpinan: Closeness Centrality = 1.0
+Node pokok: Closeness Centrality = 0.6089385474860335
+Node politik: Closeness Centrality = 1.0
+Node prioritas: Closeness Centrality = 0.6089385474860335
+Node produk: Closeness Centrality = 0.6089385474860335
+Node prolegnas: Closeness Centrality = 0.6089385474860335
+Node puan: Closeness Centrality = 0.6089385474860335
+Node purwa: Closeness Centrality = 0.6089385474860335
+Node rajin: Closeness Centrality = 0.6089385474860335
+Node rangka: Closeness Centrality = 0.6089385474860335
+Node rapat: Closeness Centrality = 1.0
+Node rapur: Closeness Centrality = 1.0
+Node rincian: Closeness Centrality = 0.6089385474860335
+Node salah: Closeness Centrality = 0.6089385474860335
+Node seiring: Closeness Centrality = 0.6089385474860335
+Node sengaja: Closeness Centrality = 0.6089385474860335
+Node senin: Closeness Centrality = 0.6089385474860335
+Node sesuai: Closeness Centrality = 0.6089385474860335
+Node sidang: Closeness Centrality = 1.0
+Node sifat: Closeness Centrality = 0.6089385474860335
+Node tahapan: Closeness Centrality = 1.0
+Node tata: Closeness Centrality = 0.6089385474860335
+Node terpilih: Closeness Centrality = 0.6089385474860335
+Node tertutup: Closeness Centrality = 1.0
+Node tingkat: Closeness Centrality = 1.0
+Node undang: Closeness Centrality = 1.0
+Node unsur: Closeness Centrality = 0.6089385474860335
+Node uu: Closeness Centrality = 0.6089385474860335
+Node viii: Closeness Centrality = 0.6089385474860335
+Node virtual: Closeness Centrality = 1.0
+Node wakil: Closeness Centrality = 0.6089385474860335
 </pre></div>
 </div>
 </div>
 </div>
-<section id="nilai-closeness-centrality-dari-yang-tertinggi-ke-terendah">
-<h3>Nilai closeness centrality dari yang tertinggi ke terendah<a class="headerlink" href="#nilai-closeness-centrality-dari-yang-tertinggi-ke-terendah" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengurutkan node berdasarkan closeness centrality</span>
-<span class="n">sorted_closeness</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">closeness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Mencetak hasil</span>
-<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">closeness</span> <span class="ow">in</span> <span class="n">sorted_closeness</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: Closeness Centrality = </span><span class="si">{</span><span class="n">closeness</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 4: Closeness Centrality = 0.6913875598086124
-Node 10: Closeness Centrality = 0.6613272311212814
-Node 8: Closeness Centrality = 0.6337719298245614
-Node 11: Closeness Centrality = 0.608421052631579
-Node 13: Closeness Centrality = 0.608421052631579
-Node 16: Closeness Centrality = 0.608421052631579
-Node 7: Closeness Centrality = 0.5633528265107213
-Node 9: Closeness Centrality = 0.5633528265107213
-Node 15: Closeness Centrality = 0.5633528265107213
-Node 18: Closeness Centrality = 0.5633528265107213
-Node 2: Closeness Centrality = 0.5432330827067668
-Node 17: Closeness Centrality = 0.5432330827067668
-Node 3: Closeness Centrality = 0.5245009074410163
-Node 6: Closeness Centrality = 0.5245009074410163
-Node 12: Closeness Centrality = 0.5245009074410163
-Node 14: Closeness Centrality = 0.4609250398724083
-Node 19: Closeness Centrality = 0.4345864661654135
-Node 0: Closeness Centrality = 0.3104189044038668
-Node 1: Closeness Centrality = 0.0
-Node 5: Closeness Centrality = 0.0
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="nilai-closeness-centrality-teratas">
-<h3>3 nilai closeness centrality teratas<a class="headerlink" href="#nilai-closeness-centrality-teratas" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengambil 3 node dengan closeness centrality tertinggi</span>
-<span class="n">top_3_nodes</span> <span class="o">=</span> <span class="n">sorted_closeness</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
-
-<span class="c1"># Membuat DataFrame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">top_3_nodes</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="s1">&#39;Closeness Centrality&#39;</span><span class="p">])</span>
-
-<span class="c1"># Menambahkan isi dari setiap node ke DataFrame</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">node</span><span class="p">,</span> <span class="s1">&#39;Slang Word Corection&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_3_nodes</span><span class="p">]</span>
-<span class="c1"># Mengganti indeks DataFrame dengan node</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Menampilkan DataFrame</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-83e0e5c3-ea3b-4976-a25a-8a91003b8650" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Closeness Centrality</th>
-      <th>Kalimat</th>
-    </tr>
-    <tr>
-      <th>Node</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>4</th>
-      <td>0.691388</td>
-      <td>sekjen pdi perjuangan hasto kristiyanto menyeb...</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0.661327</td>
-      <td>pikir bagus apapun fungsi peran presiden kepal...</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.633772</td>
-      <td>gugatannya kpu ri dituntut membayar kerugian m...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-    <div class="colab-df-buttons">
-      
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-83e0e5c3-ea3b-4976-a25a-8a91003b8650')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-      
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-    
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-83e0e5c3-ea3b-4976-a25a-8a91003b8650 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-83e0e5c3-ea3b-4976-a25a-8a91003b8650');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-  
-    </div>
-  </div>
-  </div></div>
-</div>
-</section>
-</section>
-<section id="pagerank">
-<h2>Pagerank<a class="headerlink" href="#pagerank" title="Permalink to this heading">#</a></h2>
-<p>PageRank bekerja dengan cara menghitung jumlah dan kualitas tautan yang masuk ke suatu simpul. Jika sebuah simpul memiliki banyak tautan yang masuk dari simpul lain yang penting, maka simpul tersebut akan dianggap penting. Berikut merupakan rumus untuk menghitung pagerank:</p>
-<p><span class="math notranslate nohighlight">\(PR(A) = (1-d) + d \left( \frac{PR(T1)}{C(T1)} + \frac{PR(T2)}{C(T2)} + ... + \frac{PR(Tn)}{C(Tn)} \right)\)</span></p>
-<p>Dimana:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(PR(A)\)</span> adalah PageRank dari halaman <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(PR(T1)\)</span> sampai <span class="math notranslate nohighlight">\(PR(Tn)\)</span> adalah PageRank dari halaman <span class="math notranslate nohighlight">\(T1\)</span> sampai <span class="math notranslate nohighlight">\(Tn\)</span> yang mengarah ke halaman <span class="math notranslate nohighlight">\(A\)</span> (yaitu halaman yang memiliki tautan ke <span class="math notranslate nohighlight">\(A\)</span>).</p></li>
-<li><p><span class="math notranslate nohighlight">\(C(T1)\)</span> sampai <span class="math notranslate nohighlight">\(C(Tn)\)</span> adalah jumlah tautan keluar dari halaman <span class="math notranslate nohighlight">\(T1\)</span> sampai <span class="math notranslate nohighlight">\(Tn\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(d\)</span> adalah faktor damping, yang biasanya diatur ke 0.85.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung PageRank</span>
-<span class="n">pagerank</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">rank</span> <span class="ow">in</span> <span class="n">pagerank</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: PageRank = </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 0: PageRank = 0.017811113262076045
-Node 1: PageRank = 0.008196721311475412
-Node 2: PageRank = 0.06148000617281217
-Node 3: PageRank = 0.03427125895643202
-Node 4: PageRank = 0.06929908705485523
-Node 5: PageRank = 0.008196721311475412
-Node 6: PageRank = 0.04558866554552417
-Node 7: PageRank = 0.046448932726335254
-Node 8: PageRank = 0.05642423633743818
-Node 9: PageRank = 0.04488947230138557
-Node 10: PageRank = 0.07513606735511807
-Node 11: PageRank = 0.10229122499165873
-Node 12: PageRank = 0.03500512454816922
-Node 13: PageRank = 0.10036871474259453
-Node 14: PageRank = 0.032867810435380854
-Node 15: PageRank = 0.08462701742607408
-Node 16: PageRank = 0.059994255796619565
-Node 17: PageRank = 0.039083472269416
-Node 18: PageRank = 0.057190141023370084
-Node 19: PageRank = 0.02082995643178941
-</pre></div>
-</div>
-</div>
-</div>
-<section id="nilai-pagerank-dari-tertinggi-ke-terendah">
-<h3>Nilai pagerank dari tertinggi ke terendah<a class="headerlink" href="#nilai-pagerank-dari-tertinggi-ke-terendah" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengurutkan PageRank dari yang tertinggi ke terendah</span>
-<span class="n">sorted_pagerank</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pagerank</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Mencetak hasil</span>
-<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">rank</span> <span class="ow">in</span> <span class="n">sorted_pagerank</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: PageRank = </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 11: PageRank = 0.10229122499165873
-Node 13: PageRank = 0.10036871474259453
-Node 15: PageRank = 0.08462701742607408
-Node 10: PageRank = 0.07513606735511807
-Node 4: PageRank = 0.06929908705485523
-Node 2: PageRank = 0.06148000617281217
-Node 16: PageRank = 0.059994255796619565
-Node 18: PageRank = 0.057190141023370084
-Node 8: PageRank = 0.05642423633743818
-Node 7: PageRank = 0.046448932726335254
-Node 6: PageRank = 0.04558866554552417
-Node 9: PageRank = 0.04488947230138557
-Node 17: PageRank = 0.039083472269416
-Node 12: PageRank = 0.03500512454816922
-Node 3: PageRank = 0.03427125895643202
-Node 14: PageRank = 0.032867810435380854
-Node 19: PageRank = 0.02082995643178941
-Node 0: PageRank = 0.017811113262076045
-Node 1: PageRank = 0.008196721311475412
-Node 5: PageRank = 0.008196721311475412
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="nilai-pagerank-teratas">
-<h3>3 nilai pagerank teratas<a class="headerlink" href="#nilai-pagerank-teratas" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengambil 3 nilai teratas</span>
-<span class="n">top_3_pagerank</span> <span class="o">=</span> <span class="n">sorted_pagerank</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">top_3_pagerank</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="s1">&#39;Pagerank&#39;</span><span class="p">])</span>
-
-<span class="c1"># Menambahkan isi dari setiap node ke DataFrame</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">node</span><span class="p">,</span> <span class="s1">&#39;Slang Word Corection&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_3_pagerank</span><span class="p">]</span>
-<span class="c1"># Mengganti indeks DataFrame dengan node</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Menampilkan DataFrame</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-02cb28a9-5119-4f74-85d2-446d0ef23a54" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Pagerank</th>
-      <th>Kalimat</th>
-    </tr>
-    <tr>
-      <th>Node</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>11</th>
-      <td>0.102291</td>
-      <td>percaya percaya pesan beliau merespons positif...</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0.100369</td>
-      <td>calon presiden capres koalisi perubahan anies ...</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>0.084627</td>
-      <td>beliau bertemu orang sayang presiden sayang me...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-    <div class="colab-df-buttons">
-      
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-02cb28a9-5119-4f74-85d2-446d0ef23a54')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-      
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-    
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-02cb28a9-5119-4f74-85d2-446d0ef23a54 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-02cb28a9-5119-4f74-85d2-446d0ef23a54');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-  
-    </div>
-  </div>
-  </div></div>
-</div>
-</section>
-</section>
-<section id="eignvector-centrality">
-<h2>Eignvector Centrality<a class="headerlink" href="#eignvector-centrality" title="Permalink to this heading">#</a></h2>
-<p>Eigenvector Centrality adalah ukuran sentralitas dalam teori graf, yang memberikan skor relatif kepada semua simpul dalam jaringan berdasarkan konsep bahwa koneksi ke simpul dengan skor tinggi berkontribusi lebih banyak terhadap skor simpul yang dipertanyakan daripada koneksi yang sama ke simpul dengan skor rendah. Dengan kata lain, simpul dengan Eigenvector Centrality yang tinggi berarti bahwa simpul tersebut terhubung ke banyak simpul yang juga memiliki skor tinggi. Berikut merupakan rumus untuk menghitung nilai eignvector centrality:</p>
-<p><span class="math notranslate nohighlight">\(x_v = \frac{1}{\lambda} \sum_{t \in M(v)} x_t\)</span></p>
-<p>Dimana:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x_v\)</span> adalah eigenvector centrality dari simpul <span class="math notranslate nohighlight">\(v\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(M(v)\)</span> adalah set simpul yang berdekatan dengan <span class="math notranslate nohighlight">\(v\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(x_t\)</span>​ adalah eigenvector centrality dari simpul <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
-<li><p>λ adalah konstanta.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung eigenvector centrality</span>
-<span class="n">eigenvector_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-
-<span class="c1"># Mencetak hasil</span>
-<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">centrality</span> <span class="ow">in</span> <span class="n">eigenvector_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: Eigenvector Centrality = </span><span class="si">{</span><span class="n">centrality</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 0: Eigenvector Centrality = 0.009113114208443905
-Node 1: Eigenvector Centrality = 2.69961162219537e-16
-Node 2: Eigenvector Centrality = 0.26504867922361197
-Node 3: Eigenvector Centrality = 0.1498141286255794
-Node 4: Eigenvector Centrality = 0.307364193113173
-Node 5: Eigenvector Centrality = 2.69961162219537e-16
-Node 6: Eigenvector Centrality = 0.17649296864676517
-Node 7: Eigenvector Centrality = 0.2225903632847267
-Node 8: Eigenvector Centrality = 0.2646585281940441
-Node 9: Eigenvector Centrality = 0.25693646391388114
-Node 10: Eigenvector Centrality = 0.3398139510710536
-Node 11: Eigenvector Centrality = 0.29597152153491874
-Node 12: Eigenvector Centrality = 0.15728693808689612
-Node 13: Eigenvector Centrality = 0.29597152153491874
-Node 14: Eigenvector Centrality = 0.08161606977483825
-Node 15: Eigenvector Centrality = 0.2766719907542493
-Node 16: Eigenvector Centrality = 0.2976946515202589
-Node 17: Eigenvector Centrality = 0.21163683054906182
-Node 18: Eigenvector Centrality = 0.2139035735114714
-Node 19: Eigenvector Centrality = 0.13492907983914168
-</pre></div>
-</div>
-</div>
-</div>
-<section id="nilai-eigenvector-dari-yang-tertinggi-ke-terendah">
-<h3>Nilai eigenvector dari yang tertinggi ke terendah<a class="headerlink" href="#nilai-eigenvector-dari-yang-tertinggi-ke-terendah" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengurutkan eigenvector centrality dari yang tertinggi ke terendah</span>
-<span class="n">sorted_eigenvector</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">eigenvector_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Mencetak hasil</span>
-<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">centrality</span> <span class="ow">in</span> <span class="n">sorted_eigenvector</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: Eigenvector Centrality = </span><span class="si">{</span><span class="n">centrality</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 10: Eigenvector Centrality = 0.3398139510710536
-Node 4: Eigenvector Centrality = 0.307364193113173
-Node 16: Eigenvector Centrality = 0.2976946515202589
-Node 11: Eigenvector Centrality = 0.29597152153491874
-Node 13: Eigenvector Centrality = 0.29597152153491874
-Node 15: Eigenvector Centrality = 0.2766719907542493
-Node 2: Eigenvector Centrality = 0.26504867922361197
-Node 8: Eigenvector Centrality = 0.2646585281940441
-Node 9: Eigenvector Centrality = 0.25693646391388114
-Node 7: Eigenvector Centrality = 0.2225903632847267
-Node 18: Eigenvector Centrality = 0.2139035735114714
-Node 17: Eigenvector Centrality = 0.21163683054906182
-Node 6: Eigenvector Centrality = 0.17649296864676517
-Node 12: Eigenvector Centrality = 0.15728693808689612
-Node 3: Eigenvector Centrality = 0.1498141286255794
-Node 19: Eigenvector Centrality = 0.13492907983914168
-Node 14: Eigenvector Centrality = 0.08161606977483825
-Node 0: Eigenvector Centrality = 0.009113114208443905
-Node 1: Eigenvector Centrality = 2.69961162219537e-16
-Node 5: Eigenvector Centrality = 2.69961162219537e-16
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="nilai-eigenvector-teratas">
-<h3>3 nilai Eigenvector teratas<a class="headerlink" href="#nilai-eigenvector-teratas" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengambil 3 nilai teratas</span>
-<span class="n">top_3_eigenvector</span> <span class="o">=</span> <span class="n">sorted_eigenvector</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">top_3_eigenvector</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="s1">&#39;Eigenvector Centrality&#39;</span><span class="p">])</span>
-
-<span class="c1"># Menambahkan isi dari setiap node ke DataFrame</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">node</span><span class="p">,</span> <span class="s1">&#39;Slang Word Corection&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_3_eigenvector</span><span class="p">]</span>
-<span class="c1"># Mengganti indeks DataFrame dengan node</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Menampilkan DataFrame</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-577f8f2c-b540-43e8-afa2-6508b4f9dc9b" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Eigenvector Centrality</th>
-      <th>Kalimat</th>
-    </tr>
-    <tr>
-      <th>Node</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>10</th>
-      <td>0.339814</td>
-      <td>pikir bagus apapun fungsi peran presiden kepal...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.307364</td>
-      <td>sekjen pdi perjuangan hasto kristiyanto menyeb...</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>0.297695</td>
-      <td>berharap makan siang komitmen presiden beliau ...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-    <div class="colab-df-buttons">
-      
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-577f8f2c-b540-43e8-afa2-6508b4f9dc9b')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-      
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-    
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-577f8f2c-b540-43e8-afa2-6508b4f9dc9b button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-577f8f2c-b540-43e8-afa2-6508b4f9dc9b');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-  
-    </div>
-  </div>
-  </div></div>
-</div>
-</section>
-</section>
-<section id="betweeness-centrality">
-<h2>Betweeness Centrality<a class="headerlink" href="#betweeness-centrality" title="Permalink to this heading">#</a></h2>
-<p>Betweenness Centrality adalah ukuran sentralitas dalam teori graf berdasarkan jalur terpendek. Betweenness Centrality mewakili sejauh mana simpul berdiri di antara satu sama lain. Betweenness Centrality sering digunakan untuk menemukan simpul yang berfungsi sebagai jembatan dari satu bagian grafik ke bagian lain. Berikut merupakan rumus untuk menghitung nilai betweenness centrality:</p>
-<p><span class="math notranslate nohighlight">\(C_B(v) =\sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)}\)</span></p>
-<p>Dimana:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(C_B​(v)\)</span> adalah betweenness centrality dari simpul <span class="math notranslate nohighlight">\(v\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(V\)</span> adalah set simpul dalam jaringan</p></li>
-<li><p><span class="math notranslate nohighlight">\(σ(s,t)\)</span> adalah jumlah shortest path dari simpul <span class="math notranslate nohighlight">\(s\)</span> ke simpul <span class="math notranslate nohighlight">\(t\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(σ(s,t∣v)\)</span> adalah jumlah shortest path dari simpul <span class="math notranslate nohighlight">\(s\)</span> ke simpul <span class="math notranslate nohighlight">\(t\)</span> yang melewati simpul <span class="math notranslate nohighlight">\(v\)</span></p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung betweenness centrality</span>
-<span class="n">betweenness_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-
-<span class="c1"># Mencetak hasil</span>
-<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">centrality</span> <span class="ow">in</span> <span class="n">betweenness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: Betweenness Centrality = </span><span class="si">{</span><span class="n">centrality</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 0: Betweenness Centrality = 0.0
-Node 1: Betweenness Centrality = 0.0
-Node 2: Betweenness Centrality = 0.020676691729323307
-Node 3: Betweenness Centrality = 0.015324636377267956
-Node 4: Betweenness Centrality = 0.12590995748890485
-Node 5: Betweenness Centrality = 0.0
-Node 6: Betweenness Centrality = 0.016819827346143134
-Node 7: Betweenness Centrality = 0.01822076558918664
-Node 8: Betweenness Centrality = 0.0852216983795931
-Node 9: Betweenness Centrality = 0.006664096137780347
-Node 10: Betweenness Centrality = 0.053786661681398514
-Node 11: Betweenness Centrality = 0.02815060183481236
-Node 12: Betweenness Centrality = 0.012094338410127881
-Node 13: Betweenness Centrality = 0.02815060183481236
-Node 14: Betweenness Centrality = 0.0935672514619883
-Node 15: Betweenness Centrality = 0.033753575858839015
-Node 16: Betweenness Centrality = 0.03651592072644704
-Node 17: Betweenness Centrality = 0.011815864447443394
-Node 18: Betweenness Centrality = 0.015666691982481454
-Node 19: Betweenness Centrality = 0.0
-</pre></div>
-</div>
-</div>
-</div>
-<section id="nilai-betweenness-centrality-dari-yang-tertinggi-ke-terendah">
-<h3>Nilai betweenness centrality dari yang tertinggi ke terendah<a class="headerlink" href="#nilai-betweenness-centrality-dari-yang-tertinggi-ke-terendah" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengurutkan betweenness centrality dari yang tertinggi ke terendah</span>
-<span class="n">sorted_betweenness</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">betweenness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Mencetak hasil</span>
-<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">centrality</span> <span class="ow">in</span> <span class="n">sorted_betweenness</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: Betweenness Centrality = </span><span class="si">{</span><span class="n">centrality</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node 4: Betweenness Centrality = 0.12590995748890485
-Node 14: Betweenness Centrality = 0.0935672514619883
-Node 8: Betweenness Centrality = 0.0852216983795931
-Node 10: Betweenness Centrality = 0.053786661681398514
-Node 16: Betweenness Centrality = 0.03651592072644704
-Node 15: Betweenness Centrality = 0.033753575858839015
-Node 11: Betweenness Centrality = 0.02815060183481236
-Node 13: Betweenness Centrality = 0.02815060183481236
-Node 2: Betweenness Centrality = 0.020676691729323307
-Node 7: Betweenness Centrality = 0.01822076558918664
-Node 6: Betweenness Centrality = 0.016819827346143134
-Node 18: Betweenness Centrality = 0.015666691982481454
-Node 3: Betweenness Centrality = 0.015324636377267956
-Node 12: Betweenness Centrality = 0.012094338410127881
-Node 17: Betweenness Centrality = 0.011815864447443394
-Node 9: Betweenness Centrality = 0.006664096137780347
-Node 0: Betweenness Centrality = 0.0
-Node 1: Betweenness Centrality = 0.0
-Node 5: Betweenness Centrality = 0.0
-Node 19: Betweenness Centrality = 0.0
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="nilai-betweenness-teratas">
-<h3>3 nilai Betweenness teratas<a class="headerlink" href="#nilai-betweenness-teratas" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengambil 3 nilai teratas</span>
-<span class="n">top_3_betweenness</span> <span class="o">=</span> <span class="n">sorted_betweenness</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">top_3_betweenness</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="s1">&#39;Betweenness Centrality&#39;</span><span class="p">])</span>
-
-<span class="c1"># Menambahkan isi dari setiap node ke DataFrame</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">node</span><span class="p">,</span> <span class="s1">&#39;Slang Word Corection&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_3_betweenness</span><span class="p">]</span>
-<span class="c1"># Mengganti indeks DataFrame dengan node</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Menampilkan DataFrame</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-574fe461-48e9-4ca6-a693-eb8b997a95dc" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Betweenness Centrality</th>
-      <th>Kalimat</th>
-    </tr>
-    <tr>
-      <th>Node</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>4</th>
-      <td>0.125910</td>
-      <td>sekjen pdi perjuangan hasto kristiyanto menyeb...</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0.093567</td>
-      <td>kunjungan delegasi bksap dpr ri courtesy call ...</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.085222</td>
-      <td>gugatannya kpu ri dituntut membayar kerugian m...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-    <div class="colab-df-buttons">
-      
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-574fe461-48e9-4ca6-a693-eb8b997a95dc')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-      
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-    
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-574fe461-48e9-4ca6-a693-eb8b997a95dc button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-574fe461-48e9-4ca6-a693-eb8b997a95dc');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-  
-    </div>
-  </div>
-  </div></div>
-</div>
-</section>
 </section>
 </section>
 
@@ -4195,22 +1834,13 @@ Node 19: Betweenness Centrality = 0.0
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="topicmodelling.html"
+       href="graph.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Topic Modelling</p>
+        <p class="prev-next-title">Graph</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="roughn.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Rough-N</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -4230,29 +1860,12 @@ Node 19: Betweenness Centrality = 0.0
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-package-yang-dibutuhkan">Import library/package yang dibutuhkan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosinus-similarity">Cosinus Similarity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-koherensi">Matriks Koherensi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-output">Penjelasan output:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-networkx">Graph (NetworkX)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-closeness-centrality-dari-yang-tertinggi-ke-terendah">Nilai closeness centrality dari yang tertinggi ke terendah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-closeness-centrality-teratas">3 nilai closeness centrality teratas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pagerank">Pagerank</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-pagerank-dari-tertinggi-ke-terendah">Nilai pagerank dari tertinggi ke terendah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-pagerank-teratas">3 nilai pagerank teratas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eignvector-centrality">Eignvector Centrality</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-eigenvector-dari-yang-tertinggi-ke-terendah">Nilai eigenvector dari yang tertinggi ke terendah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-eigenvector-teratas">3 nilai Eigenvector teratas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betweeness-centrality">Betweeness Centrality</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-betweenness-centrality-dari-yang-tertinggi-ke-terendah">Nilai betweenness centrality dari yang tertinggi ke terendah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-betweenness-teratas">3 nilai Betweenness teratas</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
 </ul>
   </nav></div>
 
