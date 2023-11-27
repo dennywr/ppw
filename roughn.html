@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Rough-N &#8212; ppw</title>
+    <title>Ekstraksi Kata &#8212; ppw</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -140,6 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -173,7 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="skipgram.html">Skipgram</a></li>
 <li class="toctree-l1"><a class="reference internal" href="topicmodelling.html">Topic Modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Graph</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Rough-N</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ekstraksi Kata</a></li>
 </ul>
 
     </div>
@@ -358,6 +359,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -367,6 +369,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -388,7 +391,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Rough-N</h1>
+    <h1>Ekstraksi Kata</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -406,7 +409,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-networkx">Graph (NetworkX)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kata-teratas-dari-nilai-closeness-centrality-tertinggi">3 kata teratas dari nilai Closeness Centrality tertinggi:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -418,10 +424,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="rough-n">
-<h1>Rough-N<a class="headerlink" href="#rough-n" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ekstraksi-kata">
+<h1>Ekstraksi Kata<a class="headerlink" href="#ekstraksi-kata" title="Permalink to this heading">#</a></h1>
 <section id="import-library-package-yang-dibutuhkan">
 <h2>Import library/package yang dibutuhkan<a class="headerlink" href="#import-library-package-yang-dibutuhkan" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Pandas adalah perpustakaan perangkat lunak open-source yang ditulis dalam bahasa pemrograman Python untuk analisis data dan manipulasi data. Dikembangkan oleh Wes McKinney, Pandas menyediakan struktur data yang efisien dan mudah digunakan untuk memanipulasi dan menganalisis data numerik dan tabular. Pandas sangat populer di kalangan data scientist, analis data, dan pengembang perangkat lunak karena kemudahan penggunaannya dan dukungan yang luas dalam ekosistem Python</p></li>
+<li><p>re adalah library Python yang menyediakan dukungan untuk ekspresi reguler (regular expressions). Ekspresi reguler adalah urutan karakter yang membentuk pola pencarian. Modul re memungkinkan pencocokkan pola dengan string dan melakukan berbagai operasi seperti pencarian, pencocokan, dan manipulasi string berdasarkan pola tertentu.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -433,6 +443,7 @@ document.write(`
 </section>
 <section id="load-data">
 <h2>Load data<a class="headerlink" href="#load-data" title="Permalink to this heading">#</a></h2>
+<p>Memanggil dataset yang akan digunakan dan ditampilkan dalam bentuk dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/dennywr/cobaprosaindata/main/news_media_indonesia_politik_dan_hukum.csv&#39;</span><span class="p">)</span>
@@ -449,7 +460,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-4590b42e-41ed-4549-a4af-e5d3eeb9577b" class="colab-df-container">
+  <div id="df-b4f3f997-ea99-4508-9a95-0d0fbce47cc1" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -600,7 +611,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-4590b42e-41ed-4549-a4af-e5d3eeb9577b')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b4f3f997-ea99-4508-9a95-0d0fbce47cc1')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -652,12 +663,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-4590b42e-41ed-4549-a4af-e5d3eeb9577b button.colab-df-convert');
+        document.querySelector('#df-b4f3f997-ea99-4508-9a95-0d0fbce47cc1 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-4590b42e-41ed-4549-a4af-e5d3eeb9577b');
+        const element = document.querySelector('#df-b4f3f997-ea99-4508-9a95-0d0fbce47cc1');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -690,9 +701,13 @@ document.write(`
 </section>
 <section id="preprocessing">
 <h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
+<p>Preprocessing merupakan serangkaian langkah atau tahapan yang dilakukan untuk membersihkan, merapihkan, dan mengubah data teks mentah menjadi bentuk yang lebih sesuai untuk analisis atau pemodelan. Proses ini penting karena data teks seringkali datang dalam bentuk yang tidak terstruktur dan memerlukan persiapan khusus sebelum dapat digunakan secara efektif</p>
 <ul class="simple">
 <li><p>Hapus karakter spesial pada teks</p></li>
 </ul>
+<blockquote>
+<div><p>Karakter spesial adalah karakter yang memiliki makna khusus seperti : / $ |</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">removeSpecialText</span> <span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -733,6 +748,9 @@ Name: Isi, dtype: object
 <ul class="simple">
 <li><p>Hapus tanda baca pada teks</p></li>
 </ul>
+<blockquote>
+<div><p>Tanda baca adalah simbol atau karakter yang digunakan dalam penulisan untuk memberikan arti atau menandai struktur kalimat, misalnya . , ? !</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">removePunctuation</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -773,6 +791,9 @@ Name: Isi, dtype: object
 <ul class="simple">
 <li><p>Hapus angka pada teks</p></li>
 </ul>
+<blockquote>
+<div><p>Angka adalah simbol matematika yang digunakan untuk menyatakan nilai kuantitatif atau jumlah, misalnya 1, 2, 3, 4, 5, 6</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">removeNumbers</span> <span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -811,6 +832,9 @@ Name: Isi, dtype: object
 <ul class="simple">
 <li><p>Ubah semua huruf pada teks menjadi huruf kecil</p></li>
 </ul>
+<blockquote>
+<div><p>Untuk menghindari ambiguitas dan mempermudah pemrosesan teks, terutama dalam konteks perbandingan string dan pencarian teks. Dalam banyak kasus, case folding digunakan untuk mengurangi kompleksitas dan membuat perbandingan teks menjadi lebih konsisten (keseragaman)</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">casefolding</span><span class="p">(</span><span class="n">Comment</span><span class="p">):</span>
@@ -850,6 +874,9 @@ Name: Isi, dtype: object
 <ul class="simple">
 <li><p>Deteksi slank words (kata-kata yang tidak baku)</p></li>
 </ul>
+<blockquote>
+<div><p>Kata-kata tidak baku atau slank words sering kali memiliki penggunaan yang lebih santai, tidak resmi, dan mungkin tidak diakui dalam norma bahasa baku, misalnya yg, gua, lo</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
@@ -862,11 +889,9 @@ Name: Isi, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
-[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data]   Package stopwords is already up-to-date!
 [nltk_data] Downloading package punkt to /root/nltk_data...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]   Unzipping tokenizers/punkt.zip.
+[nltk_data]   Package punkt is already up-to-date!
 </pre></div>
 </div>
 </div>
@@ -879,6 +904,9 @@ Name: Isi, dtype: object
 </div>
 </div>
 </div>
+<blockquote>
+<div><p>Normalisasi kata-kata tidak baku menjadi kata baku dalam teks preprocessing bertujuan untuk mencapai konsistensi dan keseragaman dalam representasi kata-kata. Dengan mengubah kata-kata tidak baku menjadi bentuk baku, kita memastikan bahwa kata yang memiliki arti atau makna yang sama akan direpresentasikan dengan cara yang seragam. Normalisasi juga meningkatkan efektivitas operasi perbandingan dan pencarian, karena kata-kata diekspresikan dalam bentuk baku, memungkinkan pencocokan yang lebih mudah meskipun ada variasi casing atau penulisan yang berbeda. Selain itu, normalisasi membantu mengurangi duplikasi kata yang mungkin muncul dalam bentuk variasi casing atau bentuk tidak baku lainnya</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat fungsi untuk mengubah slang words menjadi kata Indonesia yang benar,</span>
@@ -903,7 +931,7 @@ Name: Isi, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-49e16518-a14c-4c1a-9a10-dbf08e205414" class="colab-df-container">
+  <div id="df-a045c3cf-2172-4993-a347-f742d9e7f010" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1012,7 +1040,7 @@ Name: Isi, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-49e16518-a14c-4c1a-9a10-dbf08e205414')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a045c3cf-2172-4993-a347-f742d9e7f010')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1064,12 +1092,12 @@ Name: Isi, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-49e16518-a14c-4c1a-9a10-dbf08e205414 button.colab-df-convert');
+        document.querySelector('#df-a045c3cf-2172-4993-a347-f742d9e7f010 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-49e16518-a14c-4c1a-9a10-dbf08e205414');
+        const element = document.querySelector('#df-a045c3cf-2172-4993-a347-f742d9e7f010');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1094,100 +1122,14 @@ Name: Isi, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finalResult</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">slang_words</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="matriks-koherensi">
-<h2>Matriks Koherensi<a class="headerlink" href="#matriks-koherensi" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Membuat objek CountVectorizer</span>
-<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
-
-<span class="c1"># Menghitung term frequency</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">([</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">([</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span>
-
-<span class="n">term</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
-
-<span class="c1"># Menghitung matriks koherensi</span>
-<span class="n">matriks_koherensi</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">X</span><span class="p">)</span>
-
-<span class="c1"># Membuat DataFrame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">matriks_koherensi</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="n">term</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">term</span><span class="p">)</span>
-
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finalResult</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">slang_words</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;preprocessed_text&quot;</span><span class="p">])</span>
+<span class="n">finalResult</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (0, 43)	5
-  (0, 8)	4
-  (0, 26)	3
-  (0, 50)	1
-  (0, 20)	16
-  (0, 64)	1
-  (0, 83)	1
-  (0, 104)	2
-  (0, 106)	1
-  (0, 12)	1
-  (0, 37)	1
-  (0, 60)	1
-  (0, 3)	1
-  (0, 84)	1
-  (0, 82)	1
-  (0, 100)	1
-  (0, 38)	1
-  (0, 75)	1
-  (0, 4)	2
-  (0, 72)	1
-  (0, 25)	4
-  (0, 0)	7
-  (0, 86)	1
-  (0, 46)	1
-  (0, 76)	1
-  :	:
-  (0, 52)	1
-  (0, 87)	1
-  (0, 62)	1
-  (0, 9)	1
-  (0, 54)	1
-  (0, 80)	1
-  (0, 105)	1
-  (0, 79)	2
-  (0, 21)	2
-  (0, 70)	3
-  (0, 39)	2
-  (0, 24)	2
-  (0, 93)	1
-  (0, 42)	1
-  (0, 68)	1
-  (0, 35)	1
-  (0, 88)	1
-  (0, 58)	1
-  (0, 92)	1
-  (0, 109)	1
-  (0, 65)	1
-  (0, 28)	1
-  (0, 47)	1
-  (0, 45)	1
-  (0, 63)	1
-[&#39;kinerja buruk fungsi legislasi dpr minimnya produk undang undang uu dihasilkan kelatahan dpr mengutak atik prolegnas prioritas tata kelola perencanaan buruk berdampak kinerja buruk peneliti formappi albert purwa konferensi pers evaluasi kinerja dpr sidang i sidang jelang pemilu dpr lemah jakarta senin oktober formappi mencatat komisi komisi dpr kuantitas kali rapat komisi iv rapat kali komisi ix kali rapat rapat komisi dinilai menurun dibandingkan rapat rapat sidang v sidang kali rapat penurunan rapat rapat komisi dipengaruhi politik dimana anggota dpr disibukkan tahapan tahapan pemilu pilpres pileg dimana berjuang terpilih albert berdasarkan sifat rapat rapat bersifat tertutup komisi i viii penyumbang kali rapat tertutup penurunan ketertutupan rapat rapat dibandingkan sidang v sidang rapat tertutup mengikuti rapat komisi albert formappi mencatat tingkat kehadiran rapat paripurna rapur tingkat kehadiran orang anggota dpr orang kehadiran anggota dpr rapur menurun dibandingkan sidang v sidang diikuti orang albert albert daftar kehadiran sidang i sidang v memiliki masalah sidang v anggota hadir fisik virtual izin sidang i dirinci hadir fisik virtual izin rincian sengaja disembunyikan kehadiran memenuhi kuorum sesuai anjuran ketua dpr puan maharani anggota dpr rajin mengikuti rapat rapat albert formappi menyoroti buruknya kinerja dpr melaksanakan fungsi fungsi pokok unsur pimpinan dpr elite partai politik dinilai kesulitan fokus kesulitan fokus dpr seiring kian padatnya kegiatan partai politik rangka menghadapi pemilu salah wakil ketua dpr muhaimin iskandar kontestan pilpres kondisi pimpinan dpr elite partai politik berdampak buruk kinerja dpr albert mgn z&#39;]
-[&#39;berdasarkan kode etik iya melanggar pimpinan kpk firli pertemuan pertemuan kementan menterinya media indonesia senin boyamin pertemuan dielakan terkait korupsi kementan pertemuan dibenarkan pimpinan kpk pertemuan pertemuan menandakan kpk potensi korupsi kementan lobi lobi pembenaran kementan menterinya dilaporkan kpk menterinya berusaha menghentikan perkara melobi lobi pertemuan berharap cepatlah polda dewas kpk tersandera kasusnya firli pidana iya terbukti dipecat diganti plt kpk sambungnya boyamin dewas menindaklanjuti menggali keterangan syl terang benderang firli berkelit van z&#39;]
-</pre></div>
-</div>
 <div class="output text_html">
-  <div id="df-6d607a64-938e-4295-9565-a19ae9d8a26a" class="colab-df-container">
+  <div id="df-e893dec5-b65d-44a1-87ee-997709ca2d51" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1206,302 +1148,97 @@ Name: Isi, dtype: object
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>albert</th>
-      <th>anggota</th>
-      <th>anjuran</th>
-      <th>atik</th>
-      <th>berdampak</th>
-      <th>berdasarkan</th>
-      <th>berjuang</th>
-      <th>bersifat</th>
-      <th>buruk</th>
-      <th>buruknya</th>
-      <th>...</th>
-      <th>tata</th>
-      <th>terpilih</th>
-      <th>tertutup</th>
-      <th>tingkat</th>
-      <th>undang</th>
-      <th>unsur</th>
-      <th>uu</th>
-      <th>viii</th>
-      <th>virtual</th>
-      <th>wakil</th>
+      <th>preprocessed_text</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>albert</th>
-      <td>49</td>
-      <td>35</td>
-      <td>7</td>
-      <td>7</td>
-      <td>14</td>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td>
-      <td>28</td>
-      <td>7</td>
-      <td>...</td>
-      <td>7</td>
-      <td>7</td>
-      <td>21</td>
-      <td>14</td>
-      <td>14</td>
-      <td>7</td>
-      <td>7</td>
-      <td>7</td>
-      <td>14</td>
-      <td>7</td>
+      <th>0</th>
+      <td>kinerja buruk fungsi legislasi dpr minimnya pr...</td>
     </tr>
     <tr>
-      <th>anggota</th>
-      <td>35</td>
-      <td>25</td>
-      <td>5</td>
-      <td>5</td>
-      <td>10</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>20</td>
-      <td>5</td>
-      <td>...</td>
-      <td>5</td>
-      <td>5</td>
-      <td>15</td>
-      <td>10</td>
-      <td>10</td>
-      <td>5</td>
-      <td>5</td>
-      <td>5</td>
-      <td>10</td>
-      <td>5</td>
+      <th>1</th>
+      <td>berdasarkan kode etik iya melanggar pimpinan k...</td>
     </tr>
     <tr>
-      <th>anjuran</th>
-      <td>7</td>
-      <td>5</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
+      <th>2</th>
+      <td>menanggapi pengamat politik universitas al azh...</td>
     </tr>
     <tr>
-      <th>atik</th>
-      <td>7</td>
-      <td>5</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
+      <th>3</th>
+      <td>prabowo senior paham bidang pertahanan mas gib...</td>
     </tr>
     <tr>
-      <th>berdampak</th>
-      <td>14</td>
-      <td>10</td>
-      <td>2</td>
-      <td>2</td>
-      <td>4</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>8</td>
-      <td>2</td>
-      <td>...</td>
-      <td>2</td>
-      <td>2</td>
-      <td>6</td>
-      <td>4</td>
-      <td>4</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>4</td>
-      <td>2</td>
+      <th>4</th>
+      <td>sekjen pdi perjuangan hasto kristiyanto menyeb...</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th>5</th>
+      <td>dekan fakultas ekonomi bisnis feb universitas ...</td>
     </tr>
     <tr>
-      <th>unsur</th>
-      <td>7</td>
-      <td>5</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
+      <th>6</th>
+      <td>mas gibran sosok contoh bagus anak muda gibran...</td>
     </tr>
     <tr>
-      <th>uu</th>
-      <td>7</td>
-      <td>5</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
+      <th>7</th>
+      <td>loyalitas disiplin ikhlas djarot dialog politi...</td>
     </tr>
     <tr>
-      <th>viii</th>
-      <td>7</td>
-      <td>5</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
+      <th>8</th>
+      <td>gugatannya kpu ri dituntut membayar kerugian m...</td>
     </tr>
     <tr>
-      <th>virtual</th>
-      <td>14</td>
-      <td>10</td>
-      <td>2</td>
-      <td>2</td>
-      <td>4</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>8</td>
-      <td>2</td>
-      <td>...</td>
-      <td>2</td>
-      <td>2</td>
-      <td>6</td>
-      <td>4</td>
-      <td>4</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>4</td>
-      <td>2</td>
+      <th>9</th>
+      <td>pembahasan gibran ganjar istana kepresidenan j...</td>
     </tr>
     <tr>
-      <th>wakil</th>
-      <td>7</td>
-      <td>5</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
+      <th>10</th>
+      <td>pikir bagus apapun fungsi peran presiden kepal...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>percaya percaya pesan beliau merespons positif...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>kepala pusat penerangan kapuspen tni laksda ju...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>calon presiden capres koalisi perubahan anies ...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>kunjungan delegasi bksap dpr ri courtesy call ...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>beliau bertemu orang sayang presiden sayang me...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>berharap makan siang komitmen presiden beliau ...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>presiden pemerintah daerah netral penjabat ber...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>kondisi statement hasto diterima penelusuran d...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>jokowi menceritakan pengalaman bertemu preside...</td>
     </tr>
   </tbody>
 </table>
-<p>110 rows × 110 columns</p>
 </div>
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-6d607a64-938e-4295-9565-a19ae9d8a26a')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e893dec5-b65d-44a1-87ee-997709ca2d51')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1553,12 +1290,1307 @@ Name: Isi, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-6d607a64-938e-4295-9565-a19ae9d8a26a button.colab-df-convert');
+        document.querySelector('#df-e893dec5-b65d-44a1-87ee-997709ca2d51 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-6d607a64-938e-4295-9565-a19ae9d8a26a');
+        const element = document.querySelector('#df-e893dec5-b65d-44a1-87ee-997709ca2d51');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+</section>
+<section id="matriks-koherensi">
+<h2>Matriks Koherensi<a class="headerlink" href="#matriks-koherensi" title="Permalink to this heading">#</a></h2>
+<p>Matriks koherensi (co-occurrence) adalah representasi matematis dari seberapa sering dua entitas muncul bersama-sama dalam suatu konteks atau sekelompok data. Entitas ini bisa berupa kata, dokumen, konsep, atau objek lainnya tergantung pada domain dan tujuan aplikasinya.</p>
+<p>Dalam konteks pemrosesan bahasa alami, matriks co-occurrence sering kali digunakan untuk merepresentasikan hubungan antara kata-kata dalam suatu teks atau korpus. Matriks ini memberikan gambaran seberapa sering dua kata muncul bersama-sama dalam konteks yang sama dalam suatu dokumen atau koleksi dokumen.</p>
+<p>Misalnya, jika kita memiliki kumpulan teks, kita dapat membuat matriks co-occurrence di mana setiap elemen M(i,j) dari matriks tersebut menunjukkan seberapa sering kata ke-i dan kata ke-j muncul bersama-sama.</p>
+<blockquote>
+<div><p>Penjelasan mengenai library yang diimport di bawah:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>word_tokenize adalah fungsi yang disediakan oleh NLTK (Natural Language Toolkit) untuk melakukan tokenisasi kata dalam sebuah teks. Tokenisasi kata adalah proses memecah sebuah teks menjadi kata-kata individu, yang disebut sebagai “token”</p></li>
+<li><p>itertools adalah bagian dari library Python yang menyediakan fungsi-fungsi untuk bekerja dengan iterator (objek yang dapat diulang). Fungsi combinations termasuk dalam modul ini dan berguna untuk menghasilkan semua kombinasi unik dari panjang tertentu dari sebuah iterable (seperti daftar atau string).</p></li>
+<li><p>numpy adalah library Python yang menyediakan dukungan untuk operasi numerik yang efisien, terutama pada manipulasi array dan matriks</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fungsi build_cooccurrence_matrix digunakan untuk membangun matriks koherensi berdasarkan kemunculan kata dalam sebuah set kalimat, dengan memanfaatkan ukuran window (jendela) tertentu. Matriks koherensi ini merepresentasikan seberapa sering dua kata muncul bersama-sama dalam konteks yang ditentukan oleh window.</p>
+<p>Alur kerja fungsi ini dimulai dengan melakukan iterasi melalui setiap kalimat dalam daftar kalimat yang diberikan. Untuk setiap kata dalam kalimat, fungsi menentukan jangkauan indeks sebagai “window” di sekitar kata tersebut. Kemudian, fungsi membentuk daftar kata-kata dalam window tersebut, menghapus kata saat ini dari konteks, dan melakukan iterasi pada setiap kata dalam konteks.</p>
+<p>Selanjutnya, fungsi membangun dan memperbarui dictionary cooccurrence_dict, yang menyimpan matriks koherensi antara kata-kata. Jika kata-kata belum ada dalam dictionary, fungsi inisialisasi array nol untuk masing-masing kata. Fungsi kemudian meningkatkan nilai dalam matriks koherensi untuk setiap pasangan kata yang muncul bersama-sama.</p>
+<p>Dengan menggunakan pendekatan ini, fungsi build_cooccurrence_matrix menghasilkan matriks koherensi yang merefleksikan hubungan antara kata-kata dalam teks, dengan intensitas keterkaitan diukur oleh frekuensi kemunculan bersama dalam window yang ditentukan.</p>
+<p>Nilai window_size menentukan jumlah kata di sebelah kiri dan kanan dari kata target yang akan dihitung untuk setiap kemunculan kata tersebut. window_size menunjukkan seberapa jauh kata dapat bersama-sama dalam kalimat untuk dihitung sebagai kemunculan bersama. Semakin besar nilai window_size, semakin luas konteks yang dipertimbangkan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cooccurrence_matrix</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="n">window_size</span><span class="p">):</span>
+    <span class="c1"># Inisialisasi dictionary untuk menyimpan matriks koherensi antara kata-kata</span>
+    <span class="n">cooccurrence_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Loop untuk setiap kalimat dalam daftar kalimat</span>
+    <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+        <span class="c1"># Tokenisasi kata-kata dalam kalimat dan ubah ke huruf kecil</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+        <span class="c1"># Loop untuk setiap kata dalam kalimat bersama dengan indeksnya</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">word1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+            <span class="c1"># Tentukan jangkauan indeks sebagai &quot;window&quot; di sekitar kata saat ini</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="n">window_size</span><span class="p">)</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># Buat daftar kata-kata dalam window dan hapus kata saat ini dari konteks</span>
+            <span class="n">context_words</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+            <span class="n">context_words</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">word1</span><span class="p">)</span>
+
+            <span class="c1"># Loop untuk setiap kata dalam konteks</span>
+            <span class="k">for</span> <span class="n">word2</span> <span class="ow">in</span> <span class="n">context_words</span><span class="p">:</span>
+                <span class="c1"># Inisialisasi array nol jika kata belum ada dalam dictionary</span>
+                <span class="k">if</span> <span class="n">word1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cooccurrence_dict</span><span class="p">:</span>
+                    <span class="n">cooccurrence_dict</span><span class="p">[</span><span class="n">word1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vocabulary</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">word2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cooccurrence_dict</span><span class="p">:</span>
+                    <span class="n">cooccurrence_dict</span><span class="p">[</span><span class="n">word2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vocabulary</span><span class="p">))</span>
+
+                <span class="c1"># Tingkatkan nilai dalam matriks koherensi untuk pasangan kata word1 dan word2</span>
+                <span class="n">cooccurrence_dict</span><span class="p">[</span><span class="n">word1</span><span class="p">][</span><span class="n">vocabulary</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word2</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">cooccurrence_dict</span><span class="p">[</span><span class="n">word2</span><span class="p">][</span><span class="n">vocabulary</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word1</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">cooccurrence_dict</span>
+
+<span class="c1"># Ukuran jendela (window size)</span>
+<span class="n">window_size</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># Mengumpulkan semua kalimat dari kolom &#39;kalimat&#39; dalam dataframe</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;preprocessed_text&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># Membuat vocabulary dari kata-kata unik dalam kalimat</span>
+<span class="n">vocabulary</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())))</span>
+
+<span class="c1"># Membangun matriks koherensi dengan ukuran window</span>
+<span class="n">cooccurrence_matrix_result</span> <span class="o">=</span> <span class="n">cooccurrence_matrix</span><span class="p">(</span><span class="n">kalimat</span><span class="p">,</span> <span class="n">window_size</span><span class="p">)</span>
+<span class="n">cooccurrence_matrix_result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;kinerja&#39;: array([2., 0., 0., 0., 6., 2., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 8., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.]),
+ &#39;buruk&#39;: array([2., 0., 0., 0., 2., 0., 0., 0., 0., 0., 2., 0., 0., 8., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 2., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 6., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;fungsi&#39;: array([4., 0., 0., 0., 4., 4., 0., 0., 0., 0., 2., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        4., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;legislasi&#39;: array([2., 2., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;dpr&#39;: array([4., 2., 2., 4., 0., 2., 2., 2., 2., 2., 2., 2., 0., 6., 0., 0., 2.,
+        2., 0., 0., 0., 0., 0., 2., 2., 0., 0., 0., 4., 2., 2., 2., 0., 2.,
+        4., 0., 0., 0., 4., 2., 0., 0., 2., 2., 0., 2., 0., 0., 0., 2., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 4., 0., 0., 8.,
+        2., 2., 0., 0., 0., 0., 0., 2., 0., 0., 2., 0., 0., 0., 4., 0., 2.,
+        0., 0., 0., 2., 2., 0., 2., 0., 0., 0., 0., 0., 0., 4., 2., 0., 0.,
+        2., 2., 0., 2., 0., 0., 0., 2., 2., 2., 2.]),
+ &#39;minimnya&#39;: array([0., 0., 0., 0., 2., 0., 0., 2., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;produk&#39;: array([0., 2., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;undang&#39;: array([0., 2., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 4., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;uu&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;dihasilkan&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;kelatahan&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;mengutak&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;atik&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;prolegnas&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;prioritas&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;tata&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;kelola&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;perencanaan&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;berdampak&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 2., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 6., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;peneliti&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;formappi&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 6., 0., 0., 2., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 2., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 4., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4.,
+        0., 0., 0., 0., 2., 0., 0., 0., 2., 0., 0.]),
+ &#39;albert&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 4., 0., 0., 2., 2., 0., 2., 0.,
+        0., 2., 2., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 6., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 2., 0., 0., 0., 4., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 2., 0., 2., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 2., 0., 0., 2.,
+        0., 0., 0., 0., 6., 0., 0., 0., 0., 0., 0.]),
+ &#39;purwa&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;konferensi&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 2., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;pers&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 2., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;evaluasi&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;sidang&#39;: array([ 0.,  0.,  0.,  0.,  2.,  0., 10.,  0.,  0.,  0.,  0.,  0.,  0.,
+         2.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,
+         0., 16.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,
+        20.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,
+         0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  2.,
+         0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  2.,  2.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  4.,  0.,  0.,  0.,  0.,
+         0.,  2.,  0.,  0.,  2.,  0.,  0.,  2.,  0.,  0.,  0.,  2.,  0.,
+         0.,  2., 10.,  4.,  0.,  0.,  0.,  0.,  0.]),
+ &#39;i&#39;: array([ 0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,
+         0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,
+        10.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  2.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  2.,
+         0.,  0.,  0.,  0.,  2.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.]),
+ &#39;jelang&#39;: array([0., 0., 0., 0., 2., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;pemilu&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;lemah&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;jakarta&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;senin&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;oktober&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;mencatat&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 4., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;komisi&#39;: array([ 0.,  0.,  0.,  0.,  4.,  0.,  2.,  0.,  2.,  2.,  0.,  0.,  0.,
+         0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  2.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  4.,  2.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,
+         0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  2.,  2.,  0.,  4.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  4.,  6.,  0.,
+         0.,  0., 16.,  0.,  0.,  0.,  0.,  0.,  0.]),
+ &#39;kuantitas&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.]),
+ &#39;kali&#39;: array([ 0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,
+         0.,  4.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,
+         0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,
+         2.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  2.,  0.,  6.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,
+         0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0., 12.,  0.,  0.,  0.,  0.,  0.,  0.]),
+ &#39;rapat&#39;: array([ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  6.,  0.,  0.,  0.,
+         0.,  2.,  0.,  0.,  0.,  0.,  4.,  0.,  0.,  0.,  0.,  8.,  0.,
+         0.,  4.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  2.,  8.,  0.,
+        10.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,
+         0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  2.,  0.,
+         0.,  0.,  0.,  0.,  0.,  2.,  4.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  4.,  4.,  2., 16.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,
+         0.,  0., 10.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0., 12.,  0.,
+         0.,  0., 28.,  8.,  0.,  0.,  0.,  2.,  0.]),
+ &#39;iv&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0.]),
+ &#39;ix&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        4., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.]),
+ &#39;dinilai&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 2., 0., 0., 0., 0., 0.]),
+ &#39;menurun&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 4., 0., 0., 0., 2., 0.]),
+ &#39;dibandingkan&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        4., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 8., 0., 0., 0., 0., 2., 0.]),
+ &#39;v&#39;: array([ 0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        16.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  4.,  2.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,
+         0.,  0.,  4.,  4.,  0.,  0.,  0.,  0.,  0.]),
+ &#39;penurunan&#39;: array([ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+         0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  2.,  0.,
+         0.,  0., 10.,  0.,  0.,  0.,  0.,  0.,  0.]),
+ &#39;dipengaruhi&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 2., 0., 0., 0.]),
+ &#39;politik&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 6., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 4., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.]),
+ &#39;dimana&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2.,
+        0., 0., 0., 0., 2., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;anggota&#39;: array([0., 0., 2., 0., 8., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 2., 2.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 6., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 4., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 2., 0.]),
+ &#39;disibukkan&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;tahapan&#39;: array([0., 0., 4., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;pilpres&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 2., 0., 0., 2.]),
+ &#39;pileg&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 2., 0., 0., 0.]),
+ &#39;berjuang&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.]),
+ &#39;terpilih&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.]),
+ &#39;berdasarkan&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.]),
+ &#39;sifat&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0.]),
+ &#39;bersifat&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0.]),
+ &#39;tertutup&#39;: array([0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 8., 0., 0., 0., 0., 0., 0.]),
+ &#39;viii&#39;: array([0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;penyumbang&#39;: array([0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.]),
+ &#39;ketertutupan&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0.]),
+ &#39;mengikuti&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 8., 0., 0., 0., 0., 0., 0.]),
+ &#39;tingkat&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 2.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 2., 0.]),
+ &#39;kehadiran&#39;: array([0., 0., 0., 0., 4., 0., 2., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 4., 0., 0., 4.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 4., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 2., 0., 2., 0., 0., 2., 0.]),
+ &#39;paripurna&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 2., 0.]),
+ &#39;rapur&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 2., 2., 0., 0., 0., 0., 0.]),
+ &#39;orang&#39;: array([0., 0., 0., 0., 4., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 6.,
+        0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;diikuti&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;daftar&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;memiliki&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;masalah&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;hadir&#39;: array([0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 4., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;fisik&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;virtual&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;izin&#39;: array([0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;dirinci&#39;: array([0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;rincian&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0.]),
+ &#39;sengaja&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 2., 0., 0., 0., 0.]),
+ &#39;disembunyikan&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 2., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;memenuhi&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0.]),
+ &#39;kuorum&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;sesuai&#39;: array([0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;anjuran&#39;: array([0., 0., 0., 2., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;ketua&#39;: array([0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;puan&#39;: array([0., 0., 0., 2., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;maharani&#39;: array([0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;rajin&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.]),
+ &#39;menyoroti&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.]),
+ &#39;buruknya&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;melaksanakan&#39;: array([4., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;pokok&#39;: array([4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;unsur&#39;: array([2., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;pimpinan&#39;: array([0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 2., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;elite&#39;: array([0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0., 0., 0., 4., 0.,
+        4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;partai&#39;: array([0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 6., 0.,
+        0., 2., 0., 0., 4., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;kesulitan&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 6., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 4., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;fokus&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 4., 0.,
+        0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 6., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;seiring&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;kian&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;padatnya&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0.,
+        0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;kegiatan&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;rangka&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;menghadapi&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;salah&#39;: array([0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;wakil&#39;: array([0., 0., 0., 2., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.,
+        0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;muhaimin&#39;: array([0., 0., 0., 2., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.]),
+ &#39;iskandar&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;kontestan&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.]),
+ &#39;kondisi&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;mgn&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;z&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        2., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])}
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Dengan menggunakan matriks koherensi ini, kita dapat melihat seberapa sering setiap pasangan kata muncul bersama-sama dalam konteks jendela yang ditentukan. Semakin tinggi nilai dalam matriks, semakin erat hubungan antara dua kata tersebut dalam konteks teks tersebut.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat dataframe dari matriks koherensi dengan nilai integer</span>
+<span class="n">cooccurrence_matrix_result_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cooccurrence_matrix_result</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">cooccurrence_matrix_result</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">cooccurrence_matrix_result_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-dee01738-ead2-4662-b085-fdb2526fcd14" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>kinerja</th>
+      <th>buruk</th>
+      <th>fungsi</th>
+      <th>legislasi</th>
+      <th>dpr</th>
+      <th>minimnya</th>
+      <th>produk</th>
+      <th>undang</th>
+      <th>uu</th>
+      <th>dihasilkan</th>
+      <th>...</th>
+      <th>rangka</th>
+      <th>menghadapi</th>
+      <th>salah</th>
+      <th>wakil</th>
+      <th>muhaimin</th>
+      <th>iskandar</th>
+      <th>kontestan</th>
+      <th>kondisi</th>
+      <th>mgn</th>
+      <th>z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>kinerja</th>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>buruk</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>fungsi</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>legislasi</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>dpr</th>
+      <td>6</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>iskandar</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>kontestan</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>kondisi</th>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>mgn</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>z</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>113 rows × 113 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-dee01738-ead2-4662-b085-fdb2526fcd14')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-dee01738-ead2-4662-b085-fdb2526fcd14 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-dee01738-ead2-4662-b085-fdb2526fcd14');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1604,8 +2636,8 @@ Successfully installed rouge-1.0.1
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rouge</span> <span class="kn">import</span> <span class="n">Rouge</span>
 
 <span class="c1"># Contoh hipotesis dan referensi</span>
-<span class="n">hipotesis</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
-<span class="n">referensi</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;Slang Word Corection&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">hipotesis</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;preprocessed_text&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">referensi</span> <span class="o">=</span> <span class="p">[</span><span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;preprocessed_text&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
 
 <span class="c1"># Membuat objek Rouge</span>
 <span class="n">rouge</span> <span class="o">=</span> <span class="n">Rouge</span><span class="p">()</span>
@@ -1649,19 +2681,21 @@ Untuk setiap metrik di atas, ada tiga nilai yang dihasilkan:</p>
 <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 
 <span class="c1"># Menambahkan simpul dan tepi ke grafik</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cooccurrence_matrix_result_df</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cooccurrence_matrix_result_df</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">cooccurrence_matrix_result_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">cooccurrence_matrix_result_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cooccurrence_matrix_result_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">cooccurrence_matrix_result_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
 
 <span class="c1"># Menggambar grafik</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/08b6ea06f7a96f737692f9629644d42ae272e902e52759d6550a6e86c7c153e4.png" src="_images/08b6ea06f7a96f737692f9629644d42ae272e902e52759d6550a6e86c7c153e4.png" />
+<img alt="_images/30ea4e083df22d0b0ed9edcede6bb955ccf4ae4787c9ea66723600634d08f6fe.png" src="_images/30ea4e083df22d0b0ed9edcede6bb955ccf4ae4787c9ea66723600634d08f6fe.png" />
 </div>
 </div>
 </section>
@@ -1686,120 +2720,221 @@ Untuk setiap metrik di atas, ada tiga nilai yang dihasilkan:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node albert: Closeness Centrality = 1.0
-Node anggota: Closeness Centrality = 1.0
-Node anjuran: Closeness Centrality = 0.6089385474860335
-Node atik: Closeness Centrality = 0.6089385474860335
-Node berdampak: Closeness Centrality = 1.0
-Node berdasarkan: Closeness Centrality = 0.6089385474860335
-Node berjuang: Closeness Centrality = 0.6089385474860335
-Node bersifat: Closeness Centrality = 0.6089385474860335
-Node buruk: Closeness Centrality = 1.0
-Node buruknya: Closeness Centrality = 0.6089385474860335
-Node daftar: Closeness Centrality = 0.6089385474860335
-Node dibandingkan: Closeness Centrality = 1.0
-Node dihasilkan: Closeness Centrality = 0.6089385474860335
-Node diikuti: Closeness Centrality = 0.6089385474860335
-Node dimana: Closeness Centrality = 1.0
-Node dinilai: Closeness Centrality = 1.0
-Node dipengaruhi: Closeness Centrality = 0.6089385474860335
-Node dirinci: Closeness Centrality = 0.6089385474860335
-Node disembunyikan: Closeness Centrality = 0.6089385474860335
-Node disibukkan: Closeness Centrality = 0.6089385474860335
-Node dpr: Closeness Centrality = 1.0
-Node elite: Closeness Centrality = 1.0
-Node evaluasi: Closeness Centrality = 0.6089385474860335
-Node fisik: Closeness Centrality = 1.0
-Node fokus: Closeness Centrality = 1.0
-Node formappi: Closeness Centrality = 1.0
-Node fungsi: Closeness Centrality = 1.0
-Node hadir: Closeness Centrality = 1.0
-Node iskandar: Closeness Centrality = 0.6089385474860335
-Node iv: Closeness Centrality = 0.6089385474860335
-Node ix: Closeness Centrality = 0.6089385474860335
-Node izin: Closeness Centrality = 1.0
-Node jakarta: Closeness Centrality = 0.6089385474860335
-Node jelang: Closeness Centrality = 0.6089385474860335
-Node kali: Closeness Centrality = 1.0
-Node kegiatan: Closeness Centrality = 0.6089385474860335
-Node kehadiran: Closeness Centrality = 1.0
-Node kelatahan: Closeness Centrality = 0.6089385474860335
-Node kelola: Closeness Centrality = 0.6089385474860335
-Node kesulitan: Closeness Centrality = 1.0
-Node ketertutupan: Closeness Centrality = 0.6089385474860335
-Node ketua: Closeness Centrality = 1.0
-Node kian: Closeness Centrality = 0.6089385474860335
-Node kinerja: Closeness Centrality = 1.0
-Node komisi: Closeness Centrality = 1.0
-Node kondisi: Closeness Centrality = 0.6089385474860335
-Node konferensi: Closeness Centrality = 0.6089385474860335
-Node kontestan: Closeness Centrality = 0.6089385474860335
-Node kuantitas: Closeness Centrality = 0.6089385474860335
-Node kuorum: Closeness Centrality = 0.6089385474860335
-Node legislasi: Closeness Centrality = 0.6089385474860335
-Node lemah: Closeness Centrality = 0.6089385474860335
-Node maharani: Closeness Centrality = 0.6089385474860335
-Node masalah: Closeness Centrality = 0.6089385474860335
-Node melaksanakan: Closeness Centrality = 0.6089385474860335
-Node memenuhi: Closeness Centrality = 0.6089385474860335
-Node memiliki: Closeness Centrality = 0.6089385474860335
-Node mencatat: Closeness Centrality = 1.0
-Node menghadapi: Closeness Centrality = 0.6089385474860335
-Node mengikuti: Closeness Centrality = 1.0
-Node mengutak: Closeness Centrality = 0.6089385474860335
-Node menurun: Closeness Centrality = 1.0
-Node menyoroti: Closeness Centrality = 0.6089385474860335
-Node mgn: Closeness Centrality = 0.6089385474860335
-Node minimnya: Closeness Centrality = 0.6089385474860335
-Node muhaimin: Closeness Centrality = 0.6089385474860335
-Node oktober: Closeness Centrality = 0.6089385474860335
-Node orang: Closeness Centrality = 1.0
-Node padatnya: Closeness Centrality = 0.6089385474860335
-Node paripurna: Closeness Centrality = 0.6089385474860335
-Node partai: Closeness Centrality = 1.0
-Node pemilu: Closeness Centrality = 1.0
-Node peneliti: Closeness Centrality = 0.6089385474860335
-Node penurunan: Closeness Centrality = 1.0
-Node penyumbang: Closeness Centrality = 0.6089385474860335
-Node perencanaan: Closeness Centrality = 0.6089385474860335
-Node pers: Closeness Centrality = 0.6089385474860335
-Node pileg: Closeness Centrality = 0.6089385474860335
-Node pilpres: Closeness Centrality = 1.0
-Node pimpinan: Closeness Centrality = 1.0
-Node pokok: Closeness Centrality = 0.6089385474860335
-Node politik: Closeness Centrality = 1.0
-Node prioritas: Closeness Centrality = 0.6089385474860335
-Node produk: Closeness Centrality = 0.6089385474860335
-Node prolegnas: Closeness Centrality = 0.6089385474860335
-Node puan: Closeness Centrality = 0.6089385474860335
-Node purwa: Closeness Centrality = 0.6089385474860335
-Node rajin: Closeness Centrality = 0.6089385474860335
-Node rangka: Closeness Centrality = 0.6089385474860335
-Node rapat: Closeness Centrality = 1.0
-Node rapur: Closeness Centrality = 1.0
-Node rincian: Closeness Centrality = 0.6089385474860335
-Node salah: Closeness Centrality = 0.6089385474860335
-Node seiring: Closeness Centrality = 0.6089385474860335
-Node sengaja: Closeness Centrality = 0.6089385474860335
-Node senin: Closeness Centrality = 0.6089385474860335
-Node sesuai: Closeness Centrality = 0.6089385474860335
-Node sidang: Closeness Centrality = 1.0
-Node sifat: Closeness Centrality = 0.6089385474860335
-Node tahapan: Closeness Centrality = 1.0
-Node tata: Closeness Centrality = 0.6089385474860335
-Node terpilih: Closeness Centrality = 0.6089385474860335
-Node tertutup: Closeness Centrality = 1.0
-Node tingkat: Closeness Centrality = 1.0
-Node undang: Closeness Centrality = 1.0
-Node unsur: Closeness Centrality = 0.6089385474860335
-Node uu: Closeness Centrality = 0.6089385474860335
-Node viii: Closeness Centrality = 0.6089385474860335
-Node virtual: Closeness Centrality = 1.0
-Node wakil: Closeness Centrality = 0.6089385474860335
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node kinerja: Closeness Centrality = 0.40145985401459855
+Node buruk: Closeness Centrality = 0.40892193308550184
+Node fungsi: Closeness Centrality = 0.39855072463768115
+Node legislasi: Closeness Centrality = 0.41044776119402987
+Node dpr: Closeness Centrality = 0.6214689265536724
+Node melaksanakan: Closeness Centrality = 0.4059040590405904
+Node pokok: Closeness Centrality = 0.3125
+Node unsur: Closeness Centrality = 0.39855072463768115
+Node produk: Closeness Centrality = 0.45454545454545453
+Node undang: Closeness Centrality = 0.291005291005291
+Node anggota: Closeness Centrality = 0.4489795918367347
+Node tahapan: Closeness Centrality = 0.3942652329749104
+Node sesuai: Closeness Centrality = 0.3081232492997199
+Node anjuran: Closeness Centrality = 0.4074074074074074
+Node puan: Closeness Centrality = 0.4
+Node salah: Closeness Centrality = 0.3170028818443804
+Node wakil: Closeness Centrality = 0.39568345323741005
+Node muhaimin: Closeness Centrality = 0.3914590747330961
+Node minimnya: Closeness Centrality = 0.38461538461538464
+Node dihasilkan: Closeness Centrality = 0.4845814977973568
+Node kelatahan: Closeness Centrality = 0.38461538461538464
+Node mengutak: Closeness Centrality = 0.39855072463768115
+Node atik: Closeness Centrality = 0.4074074074074074
+Node albert: Closeness Centrality = 0.46218487394957986
+Node evaluasi: Closeness Centrality = 0.39855072463768115
+Node sidang: Closeness Centrality = 0.4166666666666667
+Node i: Closeness Centrality = 0.44715447154471544
+Node jelang: Closeness Centrality = 0.4330708661417323
+Node pemilu: Closeness Centrality = 0.40145985401459855
+Node lemah: Closeness Centrality = 0.4
+Node jakarta: Closeness Centrality = 0.41198501872659177
+Node komisi: Closeness Centrality = 0.4782608695652174
+Node kuantitas: Closeness Centrality = 0.40892193308550184
+Node kali: Closeness Centrality = 0.4489795918367347
+Node menurun: Closeness Centrality = 0.40441176470588236
+Node dimana: Closeness Centrality = 0.41198501872659177
+Node disibukkan: Closeness Centrality = 0.3900709219858156
+Node mengikuti: Closeness Centrality = 0.40293040293040294
+Node kehadiran: Closeness Centrality = 0.44534412955465585
+Node rapur: Closeness Centrality = 0.41509433962264153
+Node orang: Closeness Centrality = 0.4330708661417323
+Node ketua: Closeness Centrality = 0.40892193308550184
+Node maharani: Closeness Centrality = 0.4074074074074074
+Node rajin: Closeness Centrality = 0.3971119133574007
+Node buruknya: Closeness Centrality = 0.4
+Node pimpinan: Closeness Centrality = 0.421455938697318
+Node elite: Closeness Centrality = 0.41044776119402987
+Node partai: Closeness Centrality = 0.4263565891472868
+Node kesulitan: Closeness Centrality = 0.41198501872659177
+Node fokus: Closeness Centrality = 0.4059040590405904
+Node seiring: Closeness Centrality = 0.41044776119402987
+Node kian: Closeness Centrality = 0.41353383458646614
+Node iskandar: Closeness Centrality = 0.39568345323741005
+Node kondisi: Closeness Centrality = 0.3971119133574007
+Node mgn: Closeness Centrality = 0.40892193308550184
+Node v: Closeness Centrality = 0.36789297658862874
+Node tertutup: Closeness Centrality = 0.3525641025641026
+Node viii: Closeness Centrality = 0.31339031339031337
+Node penyumbang: Closeness Centrality = 0.36065573770491804
+Node hadir: Closeness Centrality = 0.3618421052631579
+Node izin: Closeness Centrality = 0.3583061889250814
+Node dirinci: Closeness Centrality = 0.3470031545741325
+Node uu: Closeness Centrality = 0.3536977491961415
+Node rapat: Closeness Centrality = 0.421455938697318
+Node peneliti: Closeness Centrality = 0.36789297658862874
+Node formappi: Closeness Centrality = 0.36423841059602646
+Node purwa: Closeness Centrality = 0.36423841059602646
+Node konferensi: Closeness Centrality = 0.3514376996805112
+Node mencatat: Closeness Centrality = 0.3559870550161812
+Node berjuang: Closeness Centrality = 0.3343465045592705
+Node terpilih: Closeness Centrality = 0.34591194968553457
+Node berdasarkan: Closeness Centrality = 0.3323262839879154
+Node sifat: Closeness Centrality = 0.3273809523809524
+Node diikuti: Closeness Centrality = 0.3618421052631579
+Node daftar: Closeness Centrality = 0.3525641025641026
+Node menyoroti: Closeness Centrality = 0.3536977491961415
+Node z: Closeness Centrality = 0.3374233128834356
+Node pers: Closeness Centrality = 0.3741496598639456
+Node prolegnas: Closeness Centrality = 0.35947712418300654
+Node berdampak: Closeness Centrality = 0.34055727554179566
+Node prioritas: Closeness Centrality = 0.3536977491961415
+Node tata: Closeness Centrality = 0.3363914373088685
+Node kelola: Closeness Centrality = 0.3225806451612903
+Node senin: Closeness Centrality = 0.38596491228070173
+Node perencanaan: Closeness Centrality = 0.3064066852367688
+Node pilpres: Closeness Centrality = 0.3107344632768362
+Node kontestan: Closeness Centrality = 0.3047091412742382
+Node kegiatan: Closeness Centrality = 0.34591194968553457
+Node fisik: Closeness Centrality = 0.3416149068322981
+Node rincian: Closeness Centrality = 0.28061224489795916
+Node padatnya: Closeness Centrality = 0.34375
+Node dibandingkan: Closeness Centrality = 0.3283582089552239
+Node memiliki: Closeness Centrality = 0.3283582089552239
+Node masalah: Closeness Centrality = 0.3283582089552239
+Node dinilai: Closeness Centrality = 0.3225806451612903
+Node politik: Closeness Centrality = 0.3716216216216216
+Node rangka: Closeness Centrality = 0.3374233128834356
+Node oktober: Closeness Centrality = 0.3323262839879154
+Node dipengaruhi: Closeness Centrality = 0.27918781725888325
+Node menghadapi: Closeness Centrality = 0.3206997084548105
+Node tingkat: Closeness Centrality = 0.3216374269005848
+Node penurunan: Closeness Centrality = 0.3374233128834356
+Node bersifat: Closeness Centrality = 0.3273809523809524
+Node ketertutupan: Closeness Centrality = 0.3395061728395062
+Node iv: Closeness Centrality = 0.3793103448275862
+Node virtual: Closeness Centrality = 0.2972972972972973
+Node ix: Closeness Centrality = 0.3125
+Node memenuhi: Closeness Centrality = 0.29333333333333333
+Node kuorum: Closeness Centrality = 0.2716049382716049
+Node sengaja: Closeness Centrality = 0.24719101123595505
+Node disembunyikan: Closeness Centrality = 0.2540415704387991
 </pre></div>
 </div>
 </div>
 </div>
+<section id="kata-teratas-dari-nilai-closeness-centrality-tertinggi">
+<h3>3 kata teratas dari nilai Closeness Centrality tertinggi:<a class="headerlink" href="#kata-teratas-dari-nilai-closeness-centrality-tertinggi" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_closeness</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">closeness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan 3 kata teratas dari nilai tertinggi</span>
+<span class="n">top_3_nodes</span> <span class="o">=</span> <span class="n">sorted_closeness</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_3_nodes</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kata: </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kata: dpr
+Kata: dihasilkan
+Kata: komisi
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+
+<span class="k">def</span> <span class="nf">build_cooccurrence_matrix</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="n">window_size</span><span class="p">):</span>
+    <span class="c1"># Inisialisasi dictionary untuk menyimpan matriks koherensi antara kata-kata</span>
+    <span class="n">cooccurrence_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Loop untuk setiap kalimat dalam daftar kalimat</span>
+    <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+        <span class="c1"># Tokenisasi kata-kata dalam kalimat dan ubah ke huruf kecil</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+        <span class="c1"># Loop untuk setiap kata dalam kalimat bersama dengan indeksnya</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">word1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+            <span class="c1"># Tentukan jangkauan indeks sebagai &quot;jendela&quot; di sekitar kata saat ini</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="n">window_size</span><span class="p">)</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># Buat daftar kata-kata dalam jendela dan hapus kata saat ini dari konteks</span>
+            <span class="n">context_words</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+            <span class="n">context_words</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">word1</span><span class="p">)</span>
+
+            <span class="c1"># Loop untuk setiap kata dalam konteks</span>
+            <span class="k">for</span> <span class="n">word2</span> <span class="ow">in</span> <span class="n">context_words</span><span class="p">:</span>
+                <span class="c1"># Inisialisasi array nol jika kata belum ada dalam dictionary</span>
+                <span class="k">if</span> <span class="n">word1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cooccurrence_dict</span><span class="p">:</span>
+                    <span class="n">cooccurrence_dict</span><span class="p">[</span><span class="n">word1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vocabulary</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">word2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cooccurrence_dict</span><span class="p">:</span>
+                    <span class="n">cooccurrence_dict</span><span class="p">[</span><span class="n">word2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vocabulary</span><span class="p">))</span>
+
+                <span class="c1"># Tingkatkan nilai dalam matriks koherensi untuk pasangan kata word1 dan word2</span>
+                <span class="n">cooccurrence_dict</span><span class="p">[</span><span class="n">word1</span><span class="p">][</span><span class="n">vocabulary</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word2</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">cooccurrence_dict</span><span class="p">[</span><span class="n">word2</span><span class="p">][</span><span class="n">vocabulary</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word1</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">cooccurrence_dict</span>
+
+<span class="c1"># Ukuran jendela (window size)</span>
+<span class="n">window_size</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Mengumpulkan beberapa kalimat singkat</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Ini adalah contoh kalimat pertama&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Kalimat kedua adalah contoh yang berbeda&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Contoh kalimat ketiga untuk uji coba&quot;</span>
+<span class="p">]</span>
+
+<span class="c1"># [ini adalah contoh kalimat pertam] [kedua yang berbeda ketiga] [untuk uji coba]</span>
+
+<span class="c1"># Membuat vocabulary dari kata-kata unik dalam kalimat</span>
+<span class="n">vocabulary</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())))</span>
+
+<span class="c1"># Membangun matriks koherensi dengan ukuran jendela</span>
+<span class="n">cooccurrence_matrix</span> <span class="o">=</span> <span class="n">build_cooccurrence_matrix</span><span class="p">(</span><span class="n">kalimat</span><span class="p">,</span> <span class="n">window_size</span><span class="p">)</span>
+<span class="n">cooccurrence_matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ini&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 2., 0.]),
+ &#39;adalah&#39;: array([0., 2., 0., 0., 0., 0., 0., 0., 0., 4., 0., 2.]),
+ &#39;contoh&#39;: array([0., 0., 0., 2., 0., 0., 4., 0., 0., 0., 4., 0.]),
+ &#39;kalimat&#39;: array([0., 2., 0., 0., 2., 2., 0., 0., 0., 4., 0., 0.]),
+ &#39;pertama&#39;: array([0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 0., 0.]),
+ &#39;kedua&#39;: array([0., 0., 0., 0., 0., 0., 2., 0., 0., 0., 2., 0.]),
+ &#39;yang&#39;: array([0., 0., 0., 0., 0., 0., 0., 2., 0., 2., 0., 0.]),
+ &#39;berbeda&#39;: array([0., 0., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;ketiga&#39;: array([0., 0., 2., 0., 0., 0., 2., 0., 0., 0., 0., 0.]),
+ &#39;untuk&#39;: array([0., 0., 0., 0., 2., 0., 0., 0., 2., 0., 0., 0.]),
+ &#39;uji&#39;: array([2., 0., 2., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),
+ &#39;coba&#39;: array([0., 0., 0., 0., 0., 0., 0., 0., 2., 0., 0., 0.])}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -1831,7 +2966,7 @@ Node wakil: Closeness Centrality = 0.6089385474860335
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="graph.html"
@@ -1865,7 +3000,10 @@ Node wakil: Closeness Centrality = 0.6089385474860335
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-networkx">Graph (NetworkX)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kata-teratas-dari-nilai-closeness-centrality-tertinggi">3 kata teratas dari nilai Closeness Centrality tertinggi:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -1887,6 +3025,7 @@ By 20-170 Denny Wahyudi Ramadhon
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1913,8 +3052,8 @@ By 20-170 Denny Wahyudi Ramadhon
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

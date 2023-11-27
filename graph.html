@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'graph';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Rough-N" href="roughn.html" />
+    <link rel="next" title="Ekstraksi Kata" href="roughn.html" />
     <link rel="prev" title="Topic Modelling" href="topicmodelling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -141,6 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -174,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="skipgram.html">Skipgram</a></li>
 <li class="toctree-l1"><a class="reference internal" href="topicmodelling.html">Topic Modelling</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roughn.html">Rough-N</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roughn.html">Ekstraksi Kata</a></li>
 </ul>
 
     </div>
@@ -359,6 +360,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -368,6 +370,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -402,7 +405,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-package-yang-dibutuhkan">Import library/package yang dibutuhkan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#term-frequency-tf">Term Frequency (TF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-document-frequency-idf">Inverse Document Frequency (IDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#term-frequency-inverse-document-frequency-tf-idf">Term Frequency-Inverse Document Frequency (TF-IDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-model-vsm">Vector Space Model (VSM)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosinus-similarity">Cosinus Similarity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-networkx">Graph (NetworkX)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a><ul class="nav section-nav flex-column">
@@ -423,6 +432,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betweeness-centrality">Betweeness Centrality</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-betweenness-centrality-dari-yang-tertinggi-ke-terendah">Nilai betweenness centrality dari yang tertinggi ke terendah</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-betweenness-teratas">3 nilai Betweenness teratas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-manual-pagerank">Contoh perhitungan manual Pagerank</a></li>
 </ul>
 </li>
 </ul>
@@ -467,7 +477,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-556b6875-f611-48a5-a17b-3b9dc3cd5f28" class="colab-df-container">
+  <div id="df-a121cbce-7f4e-47e1-9af1-607b248252fa" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -618,7 +628,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-556b6875-f611-48a5-a17b-3b9dc3cd5f28')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a121cbce-7f4e-47e1-9af1-607b248252fa')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -670,12 +680,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-556b6875-f611-48a5-a17b-3b9dc3cd5f28 button.colab-df-convert');
+        document.querySelector('#df-a121cbce-7f4e-47e1-9af1-607b248252fa button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-556b6875-f611-48a5-a17b-3b9dc3cd5f28');
+        const element = document.querySelector('#df-a121cbce-7f4e-47e1-9af1-607b248252fa');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -921,7 +931,7 @@ Name: Isi, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-998a7b51-ad83-4183-9434-483ccec2da4b" class="colab-df-container">
+  <div id="df-2a5d5fb9-8f74-4cbb-8395-9700c69c76e8" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1030,7 +1040,7 @@ Name: Isi, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-998a7b51-ad83-4183-9434-483ccec2da4b')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-2a5d5fb9-8f74-4cbb-8395-9700c69c76e8')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1082,12 +1092,12 @@ Name: Isi, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-998a7b51-ad83-4183-9434-483ccec2da4b button.colab-df-convert');
+        document.querySelector('#df-2a5d5fb9-8f74-4cbb-8395-9700c69c76e8 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-998a7b51-ad83-4183-9434-483ccec2da4b');
+        const element = document.querySelector('#df-2a5d5fb9-8f74-4cbb-8395-9700c69c76e8');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1114,6 +1124,26 @@ Name: Isi, dtype: object
 <section id="tf-idf">
 <h2>TF-IDF<a class="headerlink" href="#tf-idf" title="Permalink to this heading">#</a></h2>
 <p>TF-IDF (Term Frequency-Inverse Document Frequency) adalah metode yang digunakan mengevaluasi seberapa penting sebuah kata bagi sebuah dokumen dalam kumpulan dokumen dengan cara mengalikan berapa kali sebuah kata muncul dalam sebuah dokumen (Term Frequency) dengan frekuensi dokumen terbalik (Inverse Document Frequency) dari kata di seluruh set dokumen.</p>
+<section id="term-frequency-tf">
+<h3>Term Frequency (TF)<a class="headerlink" href="#term-frequency-tf" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\text{TF}(t, d) = \frac{\text{jumlah kemunculan term } t \text{ dalam dokumen } d}{\text{total jumlah term dalam dokumen } d}
+\)</span></p>
+</section>
+<section id="inverse-document-frequency-idf">
+<h3>Inverse Document Frequency (IDF)<a class="headerlink" href="#inverse-document-frequency-idf" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\text{IDF}(t, D) = \log\left(\frac{\text{total jumlah dokumen dalam korpus } |D|}{\text{jumlah dokumen yang mengandung term } t + 1}\right)
+\)</span></p>
+</section>
+<section id="term-frequency-inverse-document-frequency-tf-idf">
+<h3>Term Frequency-Inverse Document Frequency (TF-IDF)<a class="headerlink" href="#term-frequency-inverse-document-frequency-tf-idf" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)\)</span></p>
+<p>Penjelasan:</p>
+<ul class="simple">
+<li><p>t adalah term (kata kunci),</p></li>
+<li><p>d adalah dokumen,</p></li>
+<li><p>D adalah korpus (kumpulan dokumen),</p></li>
+<li><p>∣D∣ adalah total jumlah dokumen dalam korpus.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">RegexpTokenizer</span>
@@ -1144,6 +1174,9 @@ Name: Isi, dtype: object
 </div>
 </div>
 </div>
+<blockquote>
+<div><p>membuat matriks TF-IDF dari teks dalam kolom ‘Join Words’ dari dataframe finalResult. Pertama, dilakukan impor modul stopwords dari NLTK untuk mendapatkan daftar stopwords dalam bahasa Indonesia. Selanjutnya, dibuat tokenizer dengan RegexpTokenizer untuk memproses teks. Kemudian, menggunakan TfidfVectorizer dari scikit-learn, teks diubah menjadi representasi vektor TF-IDF. Proses ini mencakup pengonversian huruf menjadi huruf kecil, penggunaan stopwords, dan penerapan tokenizer. Matriks TF-IDF yang dihasilkan, disimpan dalam variabel tfidf_matrix</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">RegexpTokenizer</span>
@@ -1245,6 +1278,12 @@ Name: Isi, dtype: object
 </div>
 </div>
 </div>
+</section>
+<section id="vector-space-model-vsm">
+<h3>Vector Space Model (VSM)<a class="headerlink" href="#vector-space-model-vsm" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>(Vector Space Model atau VSM) adalah representasi matematis dari dokumen-dokumen dalam suatu korpus atau koleksi teks. Dalam VSM, setiap dokumen direpresentasikan sebagai vektor dalam ruang vektor yang memiliki dimensi sebanding dengan jumlah kata unik dalam seluruh korpus. Setiap dimensi vektor mewakili kata tertentu, dan nilai dalam dimensi tersebut dapat mencerminkan berbagai informasi, seperti frekuensi kemunculan kata atau skor TF-IDF</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
@@ -1260,7 +1299,7 @@ Name: Isi, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b1c927eb-9def-45ad-bc44-cfdc6bd6c4ad" class="colab-df-container">
+  <div id="df-52c7e0fa-5192-44a4-8ac2-0eb0a29a8223" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1790,7 +1829,7 @@ Name: Isi, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b1c927eb-9def-45ad-bc44-cfdc6bd6c4ad')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-52c7e0fa-5192-44a4-8ac2-0eb0a29a8223')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1842,12 +1881,12 @@ Name: Isi, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-b1c927eb-9def-45ad-bc44-cfdc6bd6c4ad button.colab-df-convert');
+        document.querySelector('#df-52c7e0fa-5192-44a4-8ac2-0eb0a29a8223 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b1c927eb-9def-45ad-bc44-cfdc6bd6c4ad');
+        const element = document.querySelector('#df-52c7e0fa-5192-44a4-8ac2-0eb0a29a8223');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1884,7 +1923,7 @@ Name: Isi, dtype: object
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-4988701a-498f-494b-bc71-646a5012d533" class="colab-df-container">
+  <div id="df-5cb71cdb-29fd-4ffa-9f9e-84375b0603bb" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2414,7 +2453,7 @@ Name: Isi, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-4988701a-498f-494b-bc71-646a5012d533')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5cb71cdb-29fd-4ffa-9f9e-84375b0603bb')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -2466,12 +2505,12 @@ Name: Isi, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-4988701a-498f-494b-bc71-646a5012d533 button.colab-df-convert');
+        document.querySelector('#df-5cb71cdb-29fd-4ffa-9f9e-84375b0603bb button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-4988701a-498f-494b-bc71-646a5012d533');
+        const element = document.querySelector('#df-5cb71cdb-29fd-4ffa-9f9e-84375b0603bb');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2557,6 +2596,7 @@ Name: Isi, dtype: object
 </div>
 </div>
 </section>
+</section>
 <section id="cosinus-similarity">
 <h2>Cosinus Similarity<a class="headerlink" href="#cosinus-similarity" title="Permalink to this heading">#</a></h2>
 <p>Cosine similarity adalah ukuran statistik yang digunakan untuk menentukan seberapa mirip dua vektor. Cosine similarity sering digunakan untuk mengukur seberapa mirip dua atau lebih dokumen. Berikut merupakan rumus untuk menghitung cosine similarity:</p>
@@ -2593,7 +2633,7 @@ Name: Isi, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-109ef85b-8539-4d27-bb92-c0f6206eeb7d" class="colab-df-container">
+  <div id="df-8d3d053c-dc1f-46da-b816-a4cdec9d748f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3101,7 +3141,7 @@ Name: Isi, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-109ef85b-8539-4d27-bb92-c0f6206eeb7d')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8d3d053c-dc1f-46da-b816-a4cdec9d748f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3153,12 +3193,12 @@ Name: Isi, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-109ef85b-8539-4d27-bb92-c0f6206eeb7d button.colab-df-convert');
+        document.querySelector('#df-8d3d053c-dc1f-46da-b816-a4cdec9d748f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-109ef85b-8539-4d27-bb92-c0f6206eeb7d');
+        const element = document.querySelector('#df-8d3d053c-dc1f-46da-b816-a4cdec9d748f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3211,7 +3251,7 @@ Name: Isi, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/52dd03e0dc85d04a9d5ad7a4a606a5c17df2cfc5bf2c4ebee38df835e53b9008.png" src="_images/52dd03e0dc85d04a9d5ad7a4a606a5c17df2cfc5bf2c4ebee38df835e53b9008.png" />
+<img alt="_images/fb7ca927cb2a5d6cb5a208295685b136cb3337a1eaec6a569581db6456a293cc.png" src="_images/fb7ca927cb2a5d6cb5a208295685b136cb3337a1eaec6a569581db6456a293cc.png" />
 </div>
 </div>
 </section>
@@ -3320,7 +3360,7 @@ Node 5: Closeness Centrality = 0.0
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-83e0e5c3-ea3b-4976-a25a-8a91003b8650" class="colab-df-container">
+  <div id="df-efd5dfbf-095f-4a61-b126-c129c08a4b71" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3370,7 +3410,7 @@ Node 5: Closeness Centrality = 0.0
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-83e0e5c3-ea3b-4976-a25a-8a91003b8650')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-efd5dfbf-095f-4a61-b126-c129c08a4b71')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3422,12 +3462,12 @@ Node 5: Closeness Centrality = 0.0
 
     <script>
       const buttonEl =
-        document.querySelector('#df-83e0e5c3-ea3b-4976-a25a-8a91003b8650 button.colab-df-convert');
+        document.querySelector('#df-efd5dfbf-095f-4a61-b126-c129c08a4b71 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-83e0e5c3-ea3b-4976-a25a-8a91003b8650');
+        const element = document.querySelector('#df-efd5dfbf-095f-4a61-b126-c129c08a4b71');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3556,7 +3596,7 @@ Node 5: PageRank = 0.008196721311475412
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-02cb28a9-5119-4f74-85d2-446d0ef23a54" class="colab-df-container">
+  <div id="df-71709b24-93b5-4a18-b162-c7681ce2d7ee" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3606,7 +3646,7 @@ Node 5: PageRank = 0.008196721311475412
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-02cb28a9-5119-4f74-85d2-446d0ef23a54')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-71709b24-93b5-4a18-b162-c7681ce2d7ee')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3658,12 +3698,12 @@ Node 5: PageRank = 0.008196721311475412
 
     <script>
       const buttonEl =
-        document.querySelector('#df-02cb28a9-5119-4f74-85d2-446d0ef23a54 button.colab-df-convert');
+        document.querySelector('#df-71709b24-93b5-4a18-b162-c7681ce2d7ee button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-02cb28a9-5119-4f74-85d2-446d0ef23a54');
+        const element = document.querySelector('#df-71709b24-93b5-4a18-b162-c7681ce2d7ee');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3793,7 +3833,7 @@ Node 5: Eigenvector Centrality = 2.69961162219537e-16
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-577f8f2c-b540-43e8-afa2-6508b4f9dc9b" class="colab-df-container">
+  <div id="df-f4accf5d-01a8-473b-8cf3-9b7d4fd4ca44" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3843,7 +3883,7 @@ Node 5: Eigenvector Centrality = 2.69961162219537e-16
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-577f8f2c-b540-43e8-afa2-6508b4f9dc9b')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f4accf5d-01a8-473b-8cf3-9b7d4fd4ca44')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3895,12 +3935,12 @@ Node 5: Eigenvector Centrality = 2.69961162219537e-16
 
     <script>
       const buttonEl =
-        document.querySelector('#df-577f8f2c-b540-43e8-afa2-6508b4f9dc9b button.colab-df-convert');
+        document.querySelector('#df-f4accf5d-01a8-473b-8cf3-9b7d4fd4ca44 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-577f8f2c-b540-43e8-afa2-6508b4f9dc9b');
+        const element = document.querySelector('#df-f4accf5d-01a8-473b-8cf3-9b7d4fd4ca44');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -4030,7 +4070,7 @@ Node 19: Betweenness Centrality = 0.0
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-574fe461-48e9-4ca6-a693-eb8b997a95dc" class="colab-df-container">
+  <div id="df-bd7d1f58-f767-43bd-9850-a090f8735973" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -4080,7 +4120,7 @@ Node 19: Betweenness Centrality = 0.0
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-574fe461-48e9-4ca6-a693-eb8b997a95dc')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-bd7d1f58-f767-43bd-9850-a090f8735973')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -4132,12 +4172,12 @@ Node 19: Betweenness Centrality = 0.0
 
     <script>
       const buttonEl =
-        document.querySelector('#df-574fe461-48e9-4ca6-a693-eb8b997a95dc button.colab-df-convert');
+        document.querySelector('#df-bd7d1f58-f767-43bd-9850-a090f8735973 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-574fe461-48e9-4ca6-a693-eb8b997a95dc');
+        const element = document.querySelector('#df-bd7d1f58-f767-43bd-9850-a090f8735973');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -4160,6 +4200,105 @@ Node 19: Betweenness Centrality = 0.0
   </div>
   </div></div>
 </div>
+<p>.</p>
+<p>.</p>
+</section>
+<section id="contoh-perhitungan-manual-pagerank">
+<h3>Contoh perhitungan manual Pagerank<a class="headerlink" href="#contoh-perhitungan-manual-pagerank" title="Permalink to this heading">#</a></h3>
+<p>=&gt; Berikut ini merupakan link dari perhitungan manual Pagerank secara lengkap (25 iterasi) : <a class="reference external" href="https://docs.google.com/spreadsheets/d/1gBKucZw2LPN16CquXfPdSySzrow9mNZlbBElaTeDcuU/edit?usp=sharing">klik di sini</a></p>
+<p>1.. Insialisasi nilai awal pagerank untuk setiap node dalam graph menjadi 0.5</p>
+<p>–&gt; pagerank = {1: 0.5, 2: 0.5, 3: 0.5, 4: 0.5, 5: 0.5, 6: 0.5, 7: 0.5, 8: 0.5, 9: 0.5}</p>
+<p>Rumus:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PR[A] = (1-d) + d * ((PR[T1] / C[T1]) + ... + (PR(Tn) / C(Tn)))
+</pre></div>
+</div>
+<p>Note:</p>
+<ul class="simple">
+<li><p>PR[A] =&gt; pagerank halaman (node) A</p></li>
+<li><p>PR[T1] =&gt; pagerank halaman T1 yang mengacu ke halaman A</p></li>
+<li><p>C[T1] =&gt; jumlah link keluar (outbound link) pada halaman T1</p></li>
+<li><p>d =&gt; faktor damping yang bisa diberi antara 0 - 1</p></li>
+<li><p>n =&gt; jumlah keseluruhan halaman</p></li>
+</ul>
+<p>2.. Lakukan iterasi untuk menghitung pagerank</p>
+<p>–&gt; Iterasi = 1:</p>
+<ul>
+<li><p>PR[1] = (1-d) + d * (PR[3] / C[3])</p>
+<p>= (1 - 0.85) + 0.85 * (0.5 / 2)</p>
+<p>=  0.3625</p>
+</li>
+<li><p>PR[2] = (1-d) + d * (PR[1] / C[1])</p>
+<p>= (1 - 0.85) + 0.85 * (0.3625 / 1)</p>
+<p>= 0.458125</p>
+</li>
+<li><p>PR[3] = (1-d) + d * (PR[1] / C[1])</p>
+<p>= (1 - 0.85) + 0.85 * (0.3625 / 1)</p>
+<p>= 0.458125</p>
+</li>
+<li><p>PR[4] = (1-d) + d * (PR[2] / C[2] + PR[8] / C[8])</p>
+<p>= (1 - 0.85) + 0.85 * (0.458125 / 2 + 0.5 / 1)</p>
+<p>= 0.769703125</p>
+</li>
+<li><p>PR[5] = (1-d) + d * (PR[2] / C[2])</p>
+<p>= (1 - 0.85) + 0.85 * (0.458125 / 2)</p>
+<p>= 0.344703125</p>
+</li>
+<li><p>PR[6] = (1-d) + d * (PR[3] / C[3])</p>
+<p>= (1 - 0.85) + 0.85 * (0.458125 / 2)</p>
+<p>= 0.344703125</p>
+</li>
+<li><p>PR[7] = (1-d) + d * (PR[3] / C[3] + PR[9] / C[9])</p>
+<p>= (1 - 0.85) + 0.85 * (0.458125 / 2 + 0.5 / 1)</p>
+<p>= 0.769703125</p>
+</li>
+<li><p>PR[8] = (1-d) + d * (PR[4] / C[4] + PR[5] / C[5])</p>
+<p>= (1 - 0.85) + 0.85 * (0.769703125 / 1 + 0.344703125 / 1)</p>
+<p>=  1.0972453125</p>
+</li>
+<li><p>PR[9] = (1-d) + d * (PR[6] / C[6] + PR[7] / C[7])</p>
+<p>= (1 - 0.85) + 0.85 * (0.344703125 / 1 + 0.769703125 / 1)</p>
+<p>=  1.0972453125</p>
+</li>
+</ul>
+<p>–&gt; Iterasi = 2:</p>
+<ul>
+<li><p>PR[1] = (1-d) + d * (PR[3] / C[3])</p>
+<p>= (1 - 0.85) + 0.85 * (0.458125 / 2)</p>
+<p>=  0.344703125</p>
+</li>
+<li><p>PR[2] = (1-d) + d * (PR[1] / C[1])</p>
+<p>= (1 - 0.85) + 0.85 * (0.344703125 / 1)</p>
+<p>= 0.4429976563</p>
+</li>
+<li><p>PR[3] = (1-d) + d * (PR[1] / C[1])</p>
+<p>= (1 - 0.85) + 0.85 * (0.344703125 / 1)</p>
+<p>= 0.4429976563</p>
+</li>
+<li><p>PR[4] = (1-d) + d * (PR[2] / C[2] + PR[8] / C[8])</p>
+<p>= (1 - 0.85) + 0.85 * (0.179299766 / 2 + 1.0972453125 / 1)</p>
+<p>= 1.27093252</p>
+</li>
+<li><p>PR[5] = (1-d) + d * (PR[2] / C[2])</p>
+<p>= (1 - 0.85) + 0.85 * (0.179299766 / 2)</p>
+<p>= 0.3382740039</p>
+</li>
+<li><p>PR[6] = (1-d) + d * (PR[3] / C[3])</p>
+<p>= (1 - 0.85) + 0.85 * (0.179299766 / 2)</p>
+<p>= 0.3382740039</p>
+</li>
+<li><p>PR[7] = (1-d) + d * (PR[3] / C[3] + PR[9] / C[9])</p>
+<p>= (1 - 0.85) + 0.85 * (0.179299766 / 2 + 1.0972453125 / 1)</p>
+<p>= 1.27093252</p>
+</li>
+<li><p>PR[8] = (1-d) + d * (PR[4] / C[4] + PR[5] / C[5])</p>
+<p>= (1 - 0.85) + 0.85 * (1.158860916 / 1 + 0.226202401 / 1)</p>
+<p>=  1.517825545</p>
+</li>
+<li><p>PR[9] = (1-d) + d * (PR[6] / C[6] + PR[7] / C[7])</p>
+<p>= (1 - 0.85) + 0.85 * (0.226202401 / 1 + 1.158860916 / 1)</p>
+<p>=  1.517825545</p>
+</li>
+</ul>
 </section>
 </section>
 </section>
@@ -4192,7 +4331,7 @@ Node 19: Betweenness Centrality = 0.0
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="topicmodelling.html"
@@ -4208,7 +4347,7 @@ Node 19: Betweenness Centrality = 0.0
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Rough-N</p>
+        <p class="prev-next-title">Ekstraksi Kata</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -4230,7 +4369,13 @@ Node 19: Betweenness Centrality = 0.0
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-package-yang-dibutuhkan">Import library/package yang dibutuhkan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#term-frequency-tf">Term Frequency (TF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-document-frequency-idf">Inverse Document Frequency (IDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#term-frequency-inverse-document-frequency-tf-idf">Term Frequency-Inverse Document Frequency (TF-IDF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-model-vsm">Vector Space Model (VSM)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosinus-similarity">Cosinus Similarity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-networkx">Graph (NetworkX)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a><ul class="nav section-nav flex-column">
@@ -4251,6 +4396,7 @@ Node 19: Betweenness Centrality = 0.0
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betweeness-centrality">Betweeness Centrality</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-betweenness-centrality-dari-yang-tertinggi-ke-terendah">Nilai betweenness centrality dari yang tertinggi ke terendah</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nilai-betweenness-teratas">3 nilai Betweenness teratas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-manual-pagerank">Contoh perhitungan manual Pagerank</a></li>
 </ul>
 </li>
 </ul>
@@ -4274,6 +4420,7 @@ By 20-170 Denny Wahyudi Ramadhon
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -4300,8 +4447,8 @@ By 20-170 Denny Wahyudi Ramadhon
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
