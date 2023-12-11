@@ -64,11 +64,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'roughn';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'demo-roughn';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Klasifikasi Berita" href="uas.html" />
-    <link rel="prev" title="Document Summarization" href="graph.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,10 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">TUGAS</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="topicmodelling.html">Topic Modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">Document Summarization</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ekstraksi Kata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roughn.html">Ekstraksi Kata</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uas.html">Klasifikasi Berita</a></li>
 </ul>
 
@@ -230,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/dennywr/ppw/blob/gh-pages/_sources/roughn.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/dennywr/ppw/blob/gh-pages/_sources/demo-roughn.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/dennywr/ppw/issues/new?title=Issue%20on%20page%20%2Froughn.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dennywr/ppw/issues/new?title=Issue%20on%20page%20%2Fdemo-roughn.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/roughn.ipynb" target="_blank"
+      <li><a href="_sources/demo-roughn.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -470,7 +468,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-44ad0921-3587-4cac-9b4f-5379d9e32f61" class="colab-df-container">
+  <div id="df-a6f3f8e5-5a42-4c75-81a0-755af37d2ac9" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -539,7 +537,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-44ad0921-3587-4cac-9b4f-5379d9e32f61')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a6f3f8e5-5a42-4c75-81a0-755af37d2ac9')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -591,12 +589,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-44ad0921-3587-4cac-9b4f-5379d9e32f61 button.colab-df-convert');
+        document.querySelector('#df-a6f3f8e5-5a42-4c75-81a0-755af37d2ac9 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-44ad0921-3587-4cac-9b4f-5379d9e32f61');
+        const element = document.querySelector('#df-a6f3f8e5-5a42-4c75-81a0-755af37d2ac9');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -775,11 +773,9 @@ Name: isi, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
-[nltk_data]   Unzipping tokenizers/punkt.zip.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
-[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
@@ -898,20 +894,20 @@ Name: isi, dtype: object
 <span class="c1"># Ukuran jendela (window size)</span>
 <span class="n">window_size</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c1"># # Contoh kalimat singkat</span>
-<span class="c1"># # Mengumpulkan semua kalimat dari kolom &#39;kalimat&#39; dalam dataframe</span>
-<span class="c1"># kalimat = [</span>
-<span class="c1">#     &quot;Ini adalah contoh kalimat pertama&quot;,</span>
-<span class="c1">#     &quot;Kalimat kedua adalah contoh yang berbeda&quot;,</span>
-<span class="c1"># ]</span>
+<span class="c1"># Contoh kalimat singkat</span>
+<span class="c1"># Mengumpulkan semua kalimat dari kolom &#39;kalimat&#39; dalam dataframe</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Ini adalah contoh kalimat pertama&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Kalimat kedua adalah contoh yang berbeda&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="c1">#############</span>
 
-<span class="c1"># Mengumpulkan semua kalimat dari kolom &#39;kalimat&#39; dalam dataframe</span>
-<span class="n">kalimat</span> <span class="o">=</span> <span class="n">finalResult</span><span class="p">[</span><span class="s2">&quot;isi&quot;</span><span class="p">]</span>
+<span class="c1"># # Mengumpulkan semua kalimat dari kolom &#39;kalimat&#39; dalam dataframe</span>
+<span class="c1"># kalimat = finalResult[&quot;isi&quot;]</span>
 
-<span class="c1"># Membuat vocabulary dari kata-kata unik dalam kalimat</span>
-<span class="n">vocabulary</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())))</span>
+<span class="c1"># # Membuat vocabulary dari kata-kata unik dalam kalimat</span>
+<span class="c1"># vocabulary = list(set(word_tokenize(&#39; &#39;.join(kalimat).lower())))</span>
 
 <span class="c1"># Membangun matriks koherensi dengan ukuran window</span>
 <span class="n">cooccurrence_matrix_result</span> <span class="o">=</span> <span class="n">cooccurrence_matrix</span><span class="p">(</span><span class="n">kalimat</span><span class="p">,</span> <span class="n">window_size</span><span class="p">)</span>
@@ -920,77 +916,14 @@ Name: isi, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;kpu&#39;: {&#39;mengubah&#39;: 1, &#39;kecurigaan&#39;: 1, &#39;diintervensi&#39;: 1},
- &#39;mengubah&#39;: {&#39;kpu&#39;: 1, &#39;format&#39;: 1},
- &#39;format&#39;: {&#39;mengubah&#39;: 1, &#39;debat&#39;: 1},
- &#39;debat&#39;: {&#39;format&#39;: 1, &#39;capres&#39;: 1, &#39;pembatalan&#39;: 1, &#39;khusus&#39;: 1},
- &#39;capres&#39;: {&#39;debat&#39;: 1, &#39;cawapres&#39;: 1},
- &#39;cawapres&#39;: {&#39;capres&#39;: 1, &#39;khusus&#39;: 1},
- &#39;ganjar&#39;: {&#39;pranowo&#39;: 4, &#39;alam&#39;: 1},
- &#39;pranowo&#39;: {&#39;ganjar&#39;: 4,
-  &#39;tokoh&#39;: 1,
-  &#39;menekankan&#39;: 1,
-  &#39;dinilai&#39;: 1,
-  &#39;dukungan&#39;: 1},
- &#39;tokoh&#39;: {&#39;pranowo&#39;: 1, &#39;politik&#39;: 1},
- &#39;politik&#39;: {&#39;tokoh&#39;: 1,
-  &#39;kesiapannya&#39;: 1,
-  &#39;kepentingan&#39;: 1,
-  &#39;pendapat&#39;: 1,
-  &#39;indonesia&#39;: 1},
- &#39;kesiapannya&#39;: {&#39;politik&#39;: 1, &#39;skenario&#39;: 1},
- &#39;skenario&#39;: {&#39;kesiapannya&#39;: 1},
- &#39;menekankan&#39;: {&#39;pranowo&#39;: 1, &#39;sumber&#39;: 1},
- &#39;sumber&#39;: {&#39;menekankan&#39;: 1, &#39;daya&#39;: 1},
- &#39;daya&#39;: {&#39;sumber&#39;: 1, &#39;manusia&#39;: 1},
- &#39;manusia&#39;: {&#39;daya&#39;: 1, &#39;sdm&#39;: 1},
- &#39;sdm&#39;: {&#39;manusia&#39;: 1, &#39;unggul&#39;: 1},
- &#39;unggul&#39;: {&#39;sdm&#39;: 1, &#39;kunci&#39;: 1},
- &#39;kunci&#39;: {&#39;unggul&#39;: 1, &#39;pengentasan&#39;: 1},
- &#39;pengentasan&#39;: {&#39;kunci&#39;: 1, &#39;kemiskinan&#39;: 1},
- &#39;kemiskinan&#39;: {&#39;pengentasan&#39;: 1, &#39;indonesia&#39;: 1},
- &#39;indonesia&#39;: {&#39;kemiskinan&#39;: 1,
-  &#39;persatuan&#39;: 1,
-  &#39;sidoarjo&#39;: 1,
-  &#39;politik&#39;: 1,
-  &#39;kekuasaan&#39;: 1},
- &#39;kekhawatiran&#39;: {&#39;pemanggilan&#39;: 1},
- &#39;pemanggilan&#39;: {&#39;kekhawatiran&#39;: 1, &#39;kades&#39;: 1},
- &#39;kades&#39;: {&#39;pemanggilan&#39;: 1, &#39;disalahgunakan&#39;: 1},
- &#39;disalahgunakan&#39;: {&#39;kades&#39;: 1, &#39;kepentingan&#39;: 1},
- &#39;kepentingan&#39;: {&#39;disalahgunakan&#39;: 1, &#39;politik&#39;: 1},
- &#39;partai&#39;: {&#39;perindo&#39;: 1},
- &#39;perindo&#39;: {&#39;partai&#39;: 1, &#39;menggelar&#39;: 1},
- &#39;menggelar&#39;: {&#39;perindo&#39;: 1, &#39;shalawat&#39;: 1},
- &#39;shalawat&#39;: {&#39;menggelar&#39;: 1, &#39;persatuan&#39;: 1},
- &#39;persatuan&#39;: {&#39;shalawat&#39;: 1, &#39;indonesia&#39;: 1},
- &#39;sidoarjo&#39;: {&#39;indonesia&#39;: 1},
- &#39;kecurigaan&#39;: {&#39;kpu&#39;: 1},
- &#39;diintervensi&#39;: {&#39;kpu&#39;: 1, &#39;terkait&#39;: 1},
- &#39;terkait&#39;: {&#39;diintervensi&#39;: 1, &#39;pembatalan&#39;: 1},
- &#39;pembatalan&#39;: {&#39;terkait&#39;: 1, &#39;debat&#39;: 1},
- &#39;khusus&#39;: {&#39;debat&#39;: 1, &#39;cawapres&#39;: 1},
- &#39;dinilai&#39;: {&#39;pranowo&#39;: 1, &#39;sosok&#39;: 1},
- &#39;sosok&#39;: {&#39;dinilai&#39;: 1, &#39;pemimpin&#39;: 1, &#39;menyebutnya&#39;: 1},
- &#39;pemimpin&#39;: {&#39;sosok&#39;: 1, &#39;solutif&#39;: 1},
- &#39;solutif&#39;: {&#39;pemimpin&#39;: 1, &#39;peduli&#39;: 1},
- &#39;peduli&#39;: {&#39;solutif&#39;: 1},
- &#39;dukungan&#39;: {&#39;pranowo&#39;: 1, &#39;gen&#39;: 1},
- &#39;gen&#39;: {&#39;dukungan&#39;: 1, &#39;z&#39;: 1},
- &#39;z&#39;: {&#39;gen&#39;: 1, &#39;menyebutnya&#39;: 1},
- &#39;menyebutnya&#39;: {&#39;z&#39;: 1, &#39;sosok&#39;: 1},
- &#39;sandiaga&#39;: {&#39;uno&#39;: 1},
- &#39;uno&#39;: {&#39;sandiaga&#39;: 1, &#39;tips&#39;: 1},
- &#39;tips&#39;: {&#39;uno&#39;: 1, &#39;sukses&#39;: 1},
- &#39;sukses&#39;: {&#39;tips&#39;: 1, &#39;generasi&#39;: 1},
- &#39;generasi&#39;: {&#39;sukses&#39;: 1, &#39;muda&#39;: 1},
- &#39;muda&#39;: {&#39;generasi&#39;: 1, &#39;kampanye&#39;: 1},
- &#39;kampanye&#39;: {&#39;muda&#39;: 1, &#39;alam&#39;: 1},
- &#39;alam&#39;: {&#39;kampanye&#39;: 1, &#39;ganjar&#39;: 1},
- &#39;pendapat&#39;: {&#39;politik&#39;: 1},
- &#39;kekuasaan&#39;: {&#39;indonesia&#39;: 1, &#39;kesejahteraan&#39;: 1},
- &#39;kesejahteraan&#39;: {&#39;kekuasaan&#39;: 1, &#39;masyarakat&#39;: 1},
- &#39;masyarakat&#39;: {&#39;kesejahteraan&#39;: 1}}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ini&#39;: {&#39;adalah&#39;: 1},
+ &#39;adalah&#39;: {&#39;ini&#39;: 1, &#39;contoh&#39;: 2, &#39;kedua&#39;: 1},
+ &#39;contoh&#39;: {&#39;adalah&#39;: 2, &#39;kalimat&#39;: 1, &#39;yang&#39;: 1},
+ &#39;kalimat&#39;: {&#39;contoh&#39;: 1, &#39;pertama&#39;: 1, &#39;kedua&#39;: 1},
+ &#39;pertama&#39;: {&#39;kalimat&#39;: 1},
+ &#39;kedua&#39;: {&#39;kalimat&#39;: 1, &#39;adalah&#39;: 1},
+ &#39;yang&#39;: {&#39;contoh&#39;: 1, &#39;berbeda&#39;: 1},
+ &#39;berbeda&#39;: {&#39;yang&#39;: 1}}
 </pre></div>
 </div>
 </div>
@@ -1010,7 +943,7 @@ Name: isi, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-246e815c-0ffd-408f-b36c-6f747bfc7229" class="colab-df-container">
+  <div id="df-1735e7f6-04e2-4774-bc47-88660b5c12a9" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1029,47 +962,21 @@ Name: isi, dtype: object
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kpu</th>
-      <th>mengubah</th>
-      <th>format</th>
-      <th>debat</th>
-      <th>capres</th>
-      <th>cawapres</th>
-      <th>ganjar</th>
-      <th>pranowo</th>
-      <th>tokoh</th>
-      <th>politik</th>
-      <th>...</th>
-      <th>tips</th>
-      <th>sukses</th>
-      <th>generasi</th>
-      <th>muda</th>
-      <th>kampanye</th>
-      <th>alam</th>
-      <th>pendapat</th>
-      <th>kekuasaan</th>
-      <th>kesejahteraan</th>
-      <th>masyarakat</th>
+      <th>ini</th>
+      <th>adalah</th>
+      <th>contoh</th>
+      <th>kalimat</th>
+      <th>pertama</th>
+      <th>kedua</th>
+      <th>yang</th>
+      <th>berbeda</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>kpu</th>
+      <th>ini</th>
       <td>0</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1078,140 +985,40 @@ Name: isi, dtype: object
       <td>0</td>
     </tr>
     <tr>
-      <th>mengubah</th>
+      <th>adalah</th>
       <td>1</td>
       <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>format</th>
+      <th>contoh</th>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>kalimat</th>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>debat</th>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>capres</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>cawapres</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>ganjar</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
+      <th>pertama</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -1222,704 +1029,18 @@ Name: isi, dtype: object
       <td>0</td>
     </tr>
     <tr>
-      <th>pranowo</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>tokoh</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>kedua</th>
       <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>politik</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kesiapannya</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>skenario</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>menekankan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>sumber</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>daya</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>manusia</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>sdm</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>unggul</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kunci</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>pengentasan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kemiskinan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>indonesia</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kekhawatiran</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>pemanggilan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kades</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>disalahgunakan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kepentingan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>partai</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>perindo</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>menggelar</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>shalawat</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>persatuan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>sidoarjo</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kecurigaan</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>diintervensi</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>terkait</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>pembatalan</th>
-      <td>0</td>
+      <th>yang</th>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -1927,539 +1048,10 @@ Name: isi, dtype: object
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>khusus</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>dinilai</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>sosok</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>pemimpin</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>solutif</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>peduli</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>dukungan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>gen</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>z</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>menyebutnya</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>sandiaga</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>uno</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>tips</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>sukses</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>generasi</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>muda</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kampanye</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>alam</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>pendapat</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kekuasaan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>kesejahteraan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>masyarakat</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
+      <th>berbeda</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -2471,12 +1063,11 @@ Name: isi, dtype: object
     </tr>
   </tbody>
 </table>
-<p>59 rows × 59 columns</p>
 </div>
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-246e815c-0ffd-408f-b36c-6f747bfc7229')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1735e7f6-04e2-4774-bc47-88660b5c12a9')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -2528,12 +1119,12 @@ Name: isi, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-246e815c-0ffd-408f-b36c-6f747bfc7229 button.colab-df-convert');
+        document.querySelector('#df-1735e7f6-04e2-4774-bc47-88660b5c12a9 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-246e815c-0ffd-408f-b36c-6f747bfc7229');
+        const element = document.querySelector('#df-1735e7f6-04e2-4774-bc47-88660b5c12a9');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2583,7 +1174,7 @@ Name: isi, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2d3427406a0aac4e572bcf17d12060313914fe4c33d11d68e80f60da23de25fe.png" src="_images/2d3427406a0aac4e572bcf17d12060313914fe4c33d11d68e80f60da23de25fe.png" />
+<img alt="_images/2768c3d3729737aacfbcd30fb20358a74a3ea5a41266b595bd920fc7bfe0e49b.png" src="_images/2768c3d3729737aacfbcd30fb20358a74a3ea5a41266b595bd920fc7bfe0e49b.png" />
 </div>
 </div>
 </section>
@@ -2608,65 +1199,14 @@ Name: isi, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node kpu: Closeness Centrality = 0.06631299734748011
-Node mengubah: Closeness Centrality = 0.07183908045977012
-Node kecurigaan: Closeness Centrality = 0.04926108374384237
-Node diintervensi: Closeness Centrality = 0.06385696040868455
-Node format: Closeness Centrality = 0.07836990595611286
-Node debat: Closeness Centrality = 0.08620689655172414
-Node capres: Closeness Centrality = 0.06385696040868455
-Node pembatalan: Closeness Centrality = 0.07496251874062969
-Node khusus: Closeness Centrality = 0.06385696040868455
-Node cawapres: Closeness Centrality = 0.05070993914807303
-Node ganjar: Closeness Centrality = 0.169272030651341
-Node pranowo: Closeness Centrality = 0.19531388152077805
-Node alam: Closeness Centrality = 0.14819535757413121
-Node tokoh: Closeness Centrality = 0.19431738212526387
-Node menekankan: Closeness Centrality = 0.165592203898051
-Node dinilai: Closeness Centrality = 0.165592203898051
-Node dukungan: Closeness Centrality = 0.16138223261250728
-Node politik: Closeness Centrality = 0.19333099947488183
-Node kesiapannya: Closeness Centrality = 0.15803405351266275
-Node indonesia: Closeness Centrality = 0.1779729294231389
-Node kepentingan: Closeness Centrality = 0.16206896551724137
-Node pendapat: Closeness Centrality = 0.15673336171420463
-Node skenario: Closeness Centrality = 0.13270455364652167
-Node sumber: Closeness Centrality = 0.14372153545868574
-Node daya: Closeness Centrality = 0.12695402298850575
-Node manusia: Closeness Centrality = 0.11682885551089485
-Node sdm: Closeness Centrality = 0.11369016984045291
-Node unggul: Closeness Centrality = 0.11335180623973727
-Node kunci: Closeness Centrality = 0.1193924981083126
-Node pengentasan: Closeness Centrality = 0.13410636231180184
-Node kemiskinan: Closeness Centrality = 0.15295665420301896
-Node persatuan: Closeness Centrality = 0.15113574165298302
-Node sidoarjo: Closeness Centrality = 0.14648541114058355
-Node kekuasaan: Closeness Centrality = 0.14877424568965517
-Node kekhawatiran: Closeness Centrality = 0.0935779039227315
-Node pemanggilan: Closeness Centrality = 0.10550195816219314
-Node kades: Closeness Centrality = 0.1201457630806048
-Node disalahgunakan: Closeness Centrality = 0.13849529780564263
-Node partai: Closeness Centrality = 0.0898259596616786
-Node perindo: Closeness Centrality = 0.10075716110198868
-Node menggelar: Closeness Centrality = 0.11403055957051414
-Node shalawat: Closeness Centrality = 0.13043221539914973
-Node terkait: Closeness Centrality = 0.06896551724137932
-Node sosok: Closeness Centrality = 0.14372153545868574
-Node pemimpin: Closeness Centrality = 0.12405930585196001
-Node menyebutnya: Closeness Centrality = 0.12446472842010367
-Node solutif: Closeness Centrality = 0.10850771195598781
-Node peduli: Closeness Centrality = 0.09593502996612524
-Node gen: Closeness Centrality = 0.1390007550969041
-Node z: Closeness Centrality = 0.12325633299854925
-Node sandiaga: Closeness Centrality = 0.07092403518910935
-Node uno: Closeness Centrality = 0.07756864948381205
-Node tips: Closeness Centrality = 0.08520404227416493
-Node sukses: Closeness Centrality = 0.09404001702852277
-Node generasi: Closeness Centrality = 0.10434577231931978
-Node muda: Closeness Centrality = 0.11647158072339975
-Node kampanye: Closeness Centrality = 0.1308804360706245
-Node kesejahteraan: Closeness Centrality = 0.12695402298850575
-Node masyarakat: Closeness Centrality = 0.11007574247558301
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node ini: Closeness Centrality = 0.3684210526315789
+Node adalah: Closeness Centrality = 0.5384615384615384
+Node contoh: Closeness Centrality = 0.6363636363636364
+Node kedua: Closeness Centrality = 0.4666666666666667
+Node kalimat: Closeness Centrality = 0.5384615384615384
+Node yang: Closeness Centrality = 0.4666666666666667
+Node pertama: Closeness Centrality = 0.3684210526315789
+Node berbeda: Closeness Centrality = 0.3333333333333333
 </pre></div>
 </div>
 </div>
@@ -2692,7 +1232,7 @@ Node masyarakat: Closeness Centrality = 0.11007574247558301
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d8c8a39f-1642-42f5-91fe-804e96f1f526" class="colab-df-container">
+  <div id="df-a089ee05-91e2-4d4c-be05-6902cb4a0166" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2718,18 +1258,18 @@ Node masyarakat: Closeness Centrality = 0.11007574247558301
   <tbody>
     <tr>
       <th>1</th>
-      <td>pranowo</td>
-      <td>0.195314</td>
+      <td>contoh</td>
+      <td>0.636364</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>tokoh</td>
-      <td>0.194317</td>
+      <td>adalah</td>
+      <td>0.538462</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>politik</td>
-      <td>0.193331</td>
+      <td>kalimat</td>
+      <td>0.538462</td>
     </tr>
   </tbody>
 </table>
@@ -2737,7 +1277,7 @@ Node masyarakat: Closeness Centrality = 0.11007574247558301
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-d8c8a39f-1642-42f5-91fe-804e96f1f526')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a089ee05-91e2-4d4c-be05-6902cb4a0166')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -2789,12 +1329,12 @@ Node masyarakat: Closeness Centrality = 0.11007574247558301
 
     <script>
       const buttonEl =
-        document.querySelector('#df-d8c8a39f-1642-42f5-91fe-804e96f1f526 button.colab-df-convert');
+        document.querySelector('#df-a089ee05-91e2-4d4c-be05-6902cb4a0166 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-d8c8a39f-1642-42f5-91fe-804e96f1f526');
+        const element = document.querySelector('#df-a089ee05-91e2-4d4c-be05-6902cb4a0166');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2842,65 +1382,14 @@ Node masyarakat: Closeness Centrality = 0.11007574247558301
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node kpu: PageRank = 0.02414893580969043
-Node mengubah: PageRank = 0.01591017288044548
-Node kecurigaan: PageRank = 0.0093846191088878
-Node diintervensi: PageRank = 0.01615985972708806
-Node format: PageRank = 0.015354517533265116
-Node debat: PageRank = 0.02847103897331492
-Node capres: PageRank = 0.01514397081373604
-Node pembatalan: PageRank = 0.01536790132896405
-Node khusus: PageRank = 0.01514397081373604
-Node cawapres: PageRank = 0.015414308343205963
-Node ganjar: PageRank = 0.026752994074126284
-Node pranowo: PageRank = 0.04343719316845901
-Node alam: PageRank = 0.013524501454179433
-Node tokoh: PageRank = 0.013181515664824128
-Node menekankan: PageRank = 0.013551037422012044
-Node dinilai: PageRank = 0.013280582678087011
-Node dukungan: PageRank = 0.013411735367462593
-Node politik: PageRank = 0.03543293552094625
-Node kesiapannya: PageRank = 0.016793720431748045
-Node indonesia: PageRank = 0.036423102612648556
-Node kepentingan: PageRank = 0.01571304884831299
-Node pendapat: PageRank = 0.00856596765270595
-Node skenario: PageRank = 0.009679702499302856
-Node sumber: PageRank = 0.015041491271617965
-Node daya: PageRank = 0.01586092893890524
-Node manusia: PageRank = 0.016293851734688045
-Node sdm: PageRank = 0.016498081633352542
-Node unggul: PageRank = 0.016540510011624595
-Node kunci: PageRank = 0.016441280679934358
-Node pengentasan: PageRank = 0.01616036941830123
-Node kemiskinan: PageRank = 0.015603280983280713
-Node persatuan: PageRank = 0.015935567469962733
-Node sidoarjo: PageRank = 0.008734642407687527
-Node kekuasaan: PageRank = 0.01654193300564107
-Node kekhawatiran: PageRank = 0.01072613044597581
-Node pemanggilan: PageRank = 0.019254971595196874
-Node kades: PageRank = 0.01787321164158285
-Node disalahgunakan: PageRank = 0.01681608511698912
-Node partai: PageRank = 0.010747504889708404
-Node perindo: PageRank = 0.019304298995689372
-Node menggelar: PageRank = 0.01794842995198361
-Node shalawat: PageRank = 0.016941853087182955
-Node terkait: PageRank = 0.01594138263376779
-Node sosok: PageRank = 0.02160810826336719
-Node pemimpin: PageRank = 0.016444890516018756
-Node menyebutnya: PageRank = 0.015137642251570918
-Node solutif: PageRank = 0.018304351759903737
-Node peduli: PageRank = 0.010322228731405852
-Node gen: PageRank = 0.01471475962652841
-Node z: PageRank = 0.015229433066535632
-Node sandiaga: PageRank = 0.01083016443360246
-Node uno: PageRank = 0.019498511456432503
-Node tips: PageRank = 0.01824069985228962
-Node sukses: PageRank = 0.017434536758210484
-Node generasi: PageRank = 0.01680362711101316
-Node muda: PageRank = 0.01611764036430833
-Node kampanye: PageRank = 0.015141520836623642
-Node kesejahteraan: PageRank = 0.018369082852658078
-Node masyarakat: PageRank = 0.010349663479309474
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node ini: PageRank = 0.062164294572446904
+Node adalah: PageRank = 0.20430079972582826
+Node contoh: PageRank = 0.2037861984422184
+Node kedua: PageRank = 0.10847885535091573
+Node kalimat: PageRank = 0.16346183346268384
+Node yang: PageRank = 0.12210040914858214
+Node pertama: PageRank = 0.06506456077846882
+Node berbeda: PageRank = 0.07064304851885578
 </pre></div>
 </div>
 </div>
@@ -2926,7 +1415,7 @@ Node masyarakat: PageRank = 0.010349663479309474
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-66de2652-5d59-46d4-bbb2-a0986e78017e" class="colab-df-container">
+  <div id="df-27ea22a8-d605-4b56-8d56-963e0f109503" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2952,18 +1441,18 @@ Node masyarakat: PageRank = 0.010349663479309474
   <tbody>
     <tr>
       <th>1</th>
-      <td>pranowo</td>
-      <td>0.043437</td>
+      <td>adalah</td>
+      <td>0.204301</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>indonesia</td>
-      <td>0.036423</td>
+      <td>contoh</td>
+      <td>0.203786</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>politik</td>
-      <td>0.035433</td>
+      <td>kalimat</td>
+      <td>0.163462</td>
     </tr>
   </tbody>
 </table>
@@ -2971,7 +1460,7 @@ Node masyarakat: PageRank = 0.010349663479309474
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-66de2652-5d59-46d4-bbb2-a0986e78017e')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-27ea22a8-d605-4b56-8d56-963e0f109503')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3023,12 +1512,12 @@ Node masyarakat: PageRank = 0.010349663479309474
 
     <script>
       const buttonEl =
-        document.querySelector('#df-66de2652-5d59-46d4-bbb2-a0986e78017e button.colab-df-convert');
+        document.querySelector('#df-27ea22a8-d605-4b56-8d56-963e0f109503 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-66de2652-5d59-46d4-bbb2-a0986e78017e');
+        const element = document.querySelector('#df-27ea22a8-d605-4b56-8d56-963e0f109503');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3077,65 +1566,14 @@ Node masyarakat: PageRank = 0.010349663479309474
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node kpu: Eigenvector Centrality = 1.0041530941205666e-05
-Node mengubah: Eigenvector Centrality = 1.1372961718681236e-05
-Node kecurigaan: Eigenvector Centrality = 4.175063863295492e-06
-Node diintervensi: Eigenvector Centrality = 8.603064633977414e-06
-Node format: Eigenvector Centrality = 1.731181068011511e-05
-Node debat: Eigenvector Centrality = 3.026402662647072e-05
-Node capres: Eigenvector Centrality = 1.923282514682456e-05
-Node pembatalan: Eigenvector Centrality = 1.7011165850465306e-05
-Node khusus: Eigenvector Centrality = 1.923282514682456e-05
-Node cawapres: Eigenvector Centrality = 1.599323291185989e-05
-Node ganjar: Eigenvector Centrality = 0.127688773987234
-Node pranowo: Eigenvector Centrality = 0.29423674673154926
-Node alam: Eigenvector Centrality = 0.05541287284661612
-Node tokoh: Eigenvector Centrality = 0.2848320756248128
-Node menekankan: Eigenvector Centrality = 0.12788916132121614
-Node dinilai: Eigenvector Centrality = 0.1355275755292134
-Node dukungan: Eigenvector Centrality = 0.12977226712608766
-Node politik: Eigenvector Centrality = 0.4857296372819941
-Node kesiapannya: Eigenvector Centrality = 0.20467462970694805
-Node indonesia: Eigenvector Centrality = 0.45247418047249927
-Node kepentingan: Eigenvector Centrality = 0.21074197063780029
-Node pendapat: Eigenvector Centrality = 0.17737970155610625
-Node skenario: Eigenvector Centrality = 0.07474344083722631
-Node sumber: Eigenvector Centrality = 0.055961619690565574
-Node daya: Eigenvector Centrality = 0.025349778304220184
-Node manusia: Eigenvector Centrality = 0.013453158239669178
-Node sdm: Eigenvector Centrality = 0.011488868834905486
-Node unggul: Eigenvector Centrality = 0.0180071967079425
-Node kunci: Eigenvector Centrality = 0.037821488410547846
-Node pengentasan: Eigenvector Centrality = 0.08556233053044049
-Node kemiskinan: Eigenvector Centrality = 0.19648036881333422
-Node persatuan: Eigenvector Centrality = 0.1963122749812228
-Node sidoarjo: Eigenvector Centrality = 0.1652347581859813
-Node kekuasaan: Eigenvector Centrality = 0.19528447460535808
-Node kekhawatiran: Eigenvector Centrality = 0.0060673409308522434
-Node pemanggilan: Eigenvector Centrality = 0.016614623306478303
-Node kades: Eigenvector Centrality = 0.03942961001254629
-Node disalahgunakan: Eigenvector Centrality = 0.09135806414370459
-Node partai: Eigenvector Centrality = 0.005651718800200375
-Node perindo: Eigenvector Centrality = 0.015476614561401742
-Node menggelar: Eigenvector Centrality = 0.03672923559544189
-Node shalawat: Eigenvector Centrality = 0.08510205299118002
-Node terkait: Eigenvector Centrality = 1.0649874748419108e-05
-Node sosok: Eigenvector Centrality = 0.07687722706543994
-Node pemimpin: Eigenvector Centrality = 0.03318171097425736
-Node menyebutnya: Eigenvector Centrality = 0.04180135068197941
-Node solutif: Eigenvector Centrality = 0.013982783386120764
-Node peduli: Eigenvector Centrality = 0.005106509513750471
-Node gen: Eigenvector Centrality = 0.061117909163030705
-Node z: Eigenvector Centrality = 0.03758563070238598
-Node sandiaga: Eigenvector Centrality = 0.0001304080013182364
-Node uno: Eigenvector Centrality = 0.000357076257558714
-Node tips: Eigenvector Centrality = 0.0008473268944592914
-Node sukses: Eigenvector Centrality = 0.001963068992149374
-Node generasi: Eigenvector Centrality = 0.0045279839384955
-Node muda: Eigenvector Centrality = 0.010435633885172766
-Node kampanye: Eigenvector Centrality = 0.024047464963881944
-Node kesejahteraan: Eigenvector Centrality = 0.08228751886534025
-Node masyarakat: Eigenvector Centrality = 0.0300497164193768
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node ini: Eigenvector Centrality = 0.19705066578012848
+Node adalah: Eigenvector Centrality = 0.4647042996438052
+Node contoh: Eigenvector Centrality = 0.504758547473677
+Node kedua: Eigenvector Centrality = 0.3941013315602299
+Node kalimat: Eigenvector Centrality = 0.4647042996438053
+Node yang: Eigenvector Centrality = 0.26095943707276287
+Node pertama: Eigenvector Centrality = 0.1970506657801285
+Node berbeda: Eigenvector Centrality = 0.11065721591347429
 </pre></div>
 </div>
 </div>
@@ -3161,7 +1599,7 @@ Node masyarakat: Eigenvector Centrality = 0.0300497164193768
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-58a8eab8-be33-471d-bb01-ff36515c0fcb" class="colab-df-container">
+  <div id="df-6bfae49f-5f88-4a12-9383-6082d7db1f77" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3187,18 +1625,18 @@ Node masyarakat: Eigenvector Centrality = 0.0300497164193768
   <tbody>
     <tr>
       <th>1</th>
-      <td>politik</td>
-      <td>0.485730</td>
+      <td>contoh</td>
+      <td>0.504759</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>indonesia</td>
-      <td>0.452474</td>
+      <td>kalimat</td>
+      <td>0.464704</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>pranowo</td>
-      <td>0.294237</td>
+      <td>adalah</td>
+      <td>0.464704</td>
     </tr>
   </tbody>
 </table>
@@ -3206,7 +1644,7 @@ Node masyarakat: Eigenvector Centrality = 0.0300497164193768
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-58a8eab8-be33-471d-bb01-ff36515c0fcb')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6bfae49f-5f88-4a12-9383-6082d7db1f77')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3258,12 +1696,12 @@ Node masyarakat: Eigenvector Centrality = 0.0300497164193768
 
     <script>
       const buttonEl =
-        document.querySelector('#df-58a8eab8-be33-471d-bb01-ff36515c0fcb button.colab-df-convert');
+        document.querySelector('#df-6bfae49f-5f88-4a12-9383-6082d7db1f77 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-58a8eab8-be33-471d-bb01-ff36515c0fcb');
+        const element = document.querySelector('#df-6bfae49f-5f88-4a12-9383-6082d7db1f77');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3311,65 +1749,14 @@ Node masyarakat: Eigenvector Centrality = 0.0300497164193768
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node kpu: Betweenness Centrality = 0.007259528130671507
-Node mengubah: Betweenness Centrality = 0.006654567453115548
-Node kecurigaan: Betweenness Centrality = 0.0
-Node diintervensi: Betweenness Centrality = 0.0030248033877797948
-Node format: Betweenness Centrality = 0.007864488808227465
-Node debat: Betweenness Centrality = 0.014821536600120993
-Node capres: Betweenness Centrality = 0.0024198427102238356
-Node pembatalan: Betweenness Centrality = 0.00544464609800363
-Node khusus: Betweenness Centrality = 0.0024198427102238356
-Node cawapres: Betweenness Centrality = 0.00030248033877797946
-Node ganjar: Betweenness Centrality = 0.18874773139745918
-Node pranowo: Betweenness Centrality = 0.4131881427707199
-Node alam: Betweenness Centrality = 0.1693889897156685
-Node tokoh: Betweenness Centrality = 0.294615849969752
-Node menekankan: Betweenness Centrality = 0.08892921960072596
-Node dinilai: Betweenness Centrality = 0.12038717483363583
-Node dukungan: Betweenness Centrality = 0.04779189352692075
-Node politik: Betweenness Centrality = 0.3768905021173624
-Node kesiapannya: Betweenness Centrality = 0.02782819116757411
-Node indonesia: Betweenness Centrality = 0.2867513611615245
-Node kepentingan: Betweenness Centrality = 0.10405323653962494
-Node pendapat: Betweenness Centrality = 0.0
-Node skenario: Betweenness Centrality = 0.0
-Node sumber: Betweenness Centrality = 0.0677555958862674
-Node daya: Betweenness Centrality = 0.04658197217180884
-Node manusia: Betweenness Centrality = 0.030852994555353903
-Node sdm: Betweenness Centrality = 0.025408348457350273
-Node unggul: Betweenness Centrality = 0.024803387779794316
-Node kunci: Betweenness Centrality = 0.03508771929824562
-Node pengentasan: Betweenness Centrality = 0.056261343012704176
-Node kemiskinan: Betweenness Centrality = 0.07743496672716274
-Node persatuan: Betweenness Centrality = 0.10405323653962494
-Node sidoarjo: Betweenness Centrality = 0.0
-Node kekuasaan: Betweenness Centrality = 0.054446460980036304
-Node kekhawatiran: Betweenness Centrality = 0.0
-Node pemanggilan: Betweenness Centrality = 0.02782819116757411
-Node kades: Betweenness Centrality = 0.054446460980036304
-Node disalahgunakan: Betweenness Centrality = 0.07985480943738657
-Node partai: Betweenness Centrality = 0.0
-Node perindo: Betweenness Centrality = 0.02782819116757411
-Node menggelar: Betweenness Centrality = 0.054446460980036304
-Node shalawat: Betweenness Centrality = 0.07985480943738657
-Node terkait: Betweenness Centrality = 0.004234724742891712
-Node sosok: Betweenness Centrality = 0.10465819721718089
-Node pemimpin: Betweenness Centrality = 0.054446460980036304
-Node menyebutnya: Betweenness Centrality = 0.00544464609800363
-Node solutif: Betweenness Centrality = 0.02782819116757411
-Node peduli: Betweenness Centrality = 0.0
-Node gen: Betweenness Centrality = 0.024803387779794316
-Node z: Betweenness Centrality = 0.0036297640653357535
-Node sandiaga: Betweenness Centrality = 0.0
-Node uno: Betweenness Centrality = 0.02782819116757411
-Node tips: Betweenness Centrality = 0.054446460980036304
-Node sukses: Betweenness Centrality = 0.07985480943738657
-Node generasi: Betweenness Centrality = 0.10405323653962494
-Node muda: Betweenness Centrality = 0.12704174228675136
-Node kampanye: Betweenness Centrality = 0.14882032667876588
-Node kesejahteraan: Betweenness Centrality = 0.02782819116757411
-Node masyarakat: Betweenness Centrality = 0.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node ini: Betweenness Centrality = 0.0
+Node adalah: Betweenness Centrality = 0.3571428571428571
+Node contoh: Betweenness Centrality = 0.5714285714285714
+Node kedua: Betweenness Centrality = 0.09523809523809523
+Node kalimat: Betweenness Centrality = 0.3571428571428571
+Node yang: Betweenness Centrality = 0.2857142857142857
+Node pertama: Betweenness Centrality = 0.0
+Node berbeda: Betweenness Centrality = 0.0
 </pre></div>
 </div>
 </div>
@@ -3395,7 +1782,7 @@ Node masyarakat: Betweenness Centrality = 0.0
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-43aaaa12-cb71-4fb0-8bf3-807c450d9d1b" class="colab-df-container">
+  <div id="df-15d8375a-2840-4079-aa7a-0fb1e948f92a" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3421,18 +1808,18 @@ Node masyarakat: Betweenness Centrality = 0.0
   <tbody>
     <tr>
       <th>1</th>
-      <td>pranowo</td>
-      <td>0.413188</td>
+      <td>contoh</td>
+      <td>0.571429</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>politik</td>
-      <td>0.376891</td>
+      <td>adalah</td>
+      <td>0.357143</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>tokoh</td>
-      <td>0.294616</td>
+      <td>kalimat</td>
+      <td>0.357143</td>
     </tr>
   </tbody>
 </table>
@@ -3440,7 +1827,7 @@ Node masyarakat: Betweenness Centrality = 0.0
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-43aaaa12-cb71-4fb0-8bf3-807c450d9d1b')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-15d8375a-2840-4079-aa7a-0fb1e948f92a')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3492,12 +1879,12 @@ Node masyarakat: Betweenness Centrality = 0.0
 
     <script>
       const buttonEl =
-        document.querySelector('#df-43aaaa12-cb71-4fb0-8bf3-807c450d9d1b button.colab-df-convert');
+        document.querySelector('#df-15d8375a-2840-4079-aa7a-0fb1e948f92a button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-43aaaa12-cb71-4fb0-8bf3-807c450d9d1b');
+        const element = document.querySelector('#df-15d8375a-2840-4079-aa7a-0fb1e948f92a');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3554,24 +1941,6 @@ Node masyarakat: Betweenness Centrality = 0.0
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="graph.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Document Summarization</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="uas.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Klasifikasi Berita</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
